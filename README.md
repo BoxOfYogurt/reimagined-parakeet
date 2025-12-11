@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Reimagined parakeet
 
-## Getting Started
-
-First, run the development server:
+This project is a next application. To run the development server, do:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+### Project outline
 
-To learn more about Next.js, take a look at the following resources:
+#### Plan
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[x] Create a simple plan to get a broad overview over the assignment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### Read documentation
 
-## Deploy on Vercel
+- read NextJs documentation to get familiar with it.
+- read Contentful documentation to get familiar with it.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Development environment (linting, formatting, folder structure)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+create nextJs already comes with a good eslint configuration. Most likely no changes needed for this kind of project.
+
+[ ] prettier configuration?
+[ ] decide a folder structure
+
+#### Secrets
+
+A simple .env file to keep secrets seems good enough.
+
+[ ] create a ".env" file
+[ ] create a ".env.template" file
+
+#### Data-fetching
+
+The tasks specifies that we should fetch the faq from a Contentful API.
+
+[ ] postman workspace
+[ ] decide to use GraphQL or REST. (task assignee asks for GraphQL, but OK to use REST)
+
+REST:
+
+- no automatic types (which i would get from graphQL-codegen) - might have to implement zod.
+- the assignee (me) wants to use GraphQL
+
+GraphQL:
+
+- graphQL-codegen and graphql-request makes development pretty nice.
+- the assignee (me) wants to use it.
+- the assignor encourages to use it.
+
+[ ] error handling
+[ ] log system (optional)
+
+#### Data-visualizing
+
+The FAQ's should be displayed as accordions. Decide to implement the accordions with or without any third party package.
+Tailwindcss is already configured.
+
+[ ] implement a simple design system. (tokenization)
+[ ] use "React-aria-components" library for the main component. (great for accessibility).
+[ ] loading (skeleton?, spinner?)
+[ ] tests
+[ ] dark mode (optional - should be simple to implement by using design tokens)
+[ ] animations (optional)
+
+#### SEO
+
+Simple meta tags should be enough for this "one page" application.
