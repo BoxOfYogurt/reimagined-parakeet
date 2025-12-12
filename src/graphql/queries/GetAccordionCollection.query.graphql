@@ -1,10 +1,10 @@
-# A GraphQL query to get all accordion collections
+# A GraphQL query to get all accordion collections.
 
 # In this application we use this query to fetch the one accordion collection.
 # If there were multiple collections, we would likely add parameters to this query.
 
 query GetAccordionCollection {
-  accordionCollection(limit: 1) {
+  accordionCollection {
     items {
       ...Accordion
     }
