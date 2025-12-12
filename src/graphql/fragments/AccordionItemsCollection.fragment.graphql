@@ -1,0 +1,6 @@
+fragment AccordionItemsCollection on AccordionAccordionItemsCollection {
+  total
+  items {
+    ...AccordionItem
+  }
+}

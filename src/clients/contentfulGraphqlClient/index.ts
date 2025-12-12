@@ -1,0 +1,1 @@
+export { ContentfulGraphQLClientImpl } from "./contentfulGraphqlClient";

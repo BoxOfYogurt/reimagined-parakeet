@@ -1,0 +1,6 @@
+fragment AccordionTeaser on Accordion {
+  sys {
+    id
+  }
+  title
+}
