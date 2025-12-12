@@ -6,14 +6,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gen:graphql:sdk": "graphql-codegen --config graphql.config.ts"
   },
   "dependencies": {
+    "graphql": "^16.12.0",
+    "graphql-request": "^7.3.5",
+    "graphql-tag": "^2.12.6",
     "next": "16.0.10",
     "react": "19.2.1",
     "react-dom": "19.2.1"
   },
   "devDependencies": {
+    "@dotenvx/dotenvx": "^1.51.1",
+    "@graphql-codegen/cli": "^6.1.0",
+    "@graphql-codegen/client-preset": "^5.2.1",
+    "@graphql-codegen/typescript": "^5.0.6",
+    "@graphql-codegen/typescript-graphql-request": "^6.3.0",
+    "@graphql-codegen/typescript-operations": "^5.0.6",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

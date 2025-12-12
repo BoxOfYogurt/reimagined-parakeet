@@ -1,0 +1,10 @@
+fragment Accordion on Accordion {
+  sys {
+    id
+  }
+  internalName
+  title
+  accordionItemsCollection {
+    ...AccordionItemsCollection
+  }
+}

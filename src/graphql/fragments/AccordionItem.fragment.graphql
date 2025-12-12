@@ -1,0 +1,8 @@
+fragment AccordionItem on AccordionItem {
+  sys {
+    id
+  }
+  internalName
+  name
+  text
+}
