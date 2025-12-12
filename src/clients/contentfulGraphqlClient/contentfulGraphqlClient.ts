@@ -2,7 +2,12 @@ import {
   ContentfulGraphQLExtensionCode,
   ContentfulGraphQLExtensionCodeType,
 } from "@/constants/ContentfulGraphQLExtensionCode";
-import { GetAccordionCollectionQuery, getSdk, Sdk } from "@/graphql/sdk/sdk";
+import {
+  GetAccordionCollectionQuery,
+  GetAccordionTeaserCollectionQuery,
+  getSdk,
+  Sdk,
+} from "@/graphql/sdk/sdk";
 import { SafeGraphResponse, ContentfulGraphQLExtension } from "@/types";
 import { GraphQLClient, GraphQLResponse } from "graphql-request";
 
@@ -22,6 +27,15 @@ export class ContentfulGraphQLClientImpl extends GraphQLClient {
     });
 
     this.sdk = getSdk(this);
+  }
+
+  public async getAccordionTeaserCollection(): Promise<
+    SafeGraphResponse<GetAccordionTeaserCollectionQuery, unknown>
+  > {
+    const safeResponse = await this.doQuery<"GetAccordionTeaserCollection">(
+      this.sdk.GetAccordionTeaserCollection
+    );
+    return safeResponse;
   }
 
   public async getAccordionCollection(): Promise<

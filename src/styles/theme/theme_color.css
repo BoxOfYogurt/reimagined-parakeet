@@ -25,7 +25,9 @@
 }
 
 /* light theme */
-:root {
+@theme inline {
+  --color-*: initial;
+
   /** backgrounds **/
   --color-background: var(--teal-1);
   --color-background-secondary: var(--teal-2);

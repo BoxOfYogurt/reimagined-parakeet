@@ -1,0 +1,16 @@
+@theme {
+  --spacing-remaining_screen_height: calc(100svh - var(--header-height));
+}
+
+@layer base {
+  @media (width >= theme(--breakpoint-md)) {
+    :root {
+      --header-height: 5rem;
+    }
+  }
+}
+@media (width < theme(--breakpoint-md)) {
+  :root {
+    --header-height: 3.75rem;
+  }
+}
