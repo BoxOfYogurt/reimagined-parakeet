@@ -2138,7 +2138,7 @@ export const AccordionTeaserFragmentDoc = gql`
     `;
 export const GetAccordionCollectionDocument = gql`
     query GetAccordionCollection {
-  accordionCollection(limit: 1) {
+  accordionCollection {
     items {
       ...Accordion
     }
@@ -2147,9 +2147,9 @@ export const GetAccordionCollectionDocument = gql`
     ${AccordionFragmentDoc}
 ${AccordionItemsCollectionFragmentDoc}
 ${AccordionItemFragmentDoc}`;
-export const GetAccordionCollectionTeaserDocument = gql`
-    query GetAccordionCollectionTeaser {
-  accordionCollection(limit: 1) {
+export const GetAccordionTeaserCollectionDocument = gql`
+    query GetAccordionTeaserCollection {
+  accordionCollection {
     items {
       ...AccordionTeaser
     }
@@ -2171,15 +2171,15 @@ export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, str
 
 const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType, _variables) => action();
 const GetAccordionCollectionDocumentString = print(GetAccordionCollectionDocument);
-const GetAccordionCollectionTeaserDocumentString = print(GetAccordionCollectionTeaserDocument);
+const GetAccordionTeaserCollectionDocumentString = print(GetAccordionTeaserCollectionDocument);
 const GetSingleAccordionDocumentString = print(GetSingleAccordionDocument);
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
     GetAccordionCollection(variables?: GetAccordionCollectionQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<{ data: GetAccordionCollectionQuery; errors?: GraphQLError[]; extensions?: unknown; headers: Headers; status: number; }> {
         return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetAccordionCollectionQuery>(GetAccordionCollectionDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetAccordionCollection', 'query', variables);
     },
-    GetAccordionCollectionTeaser(variables?: GetAccordionCollectionTeaserQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<{ data: GetAccordionCollectionTeaserQuery; errors?: GraphQLError[]; extensions?: unknown; headers: Headers; status: number; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetAccordionCollectionTeaserQuery>(GetAccordionCollectionTeaserDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetAccordionCollectionTeaser', 'query', variables);
+    GetAccordionTeaserCollection(variables?: GetAccordionTeaserCollectionQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<{ data: GetAccordionTeaserCollectionQuery; errors?: GraphQLError[]; extensions?: unknown; headers: Headers; status: number; }> {
+        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetAccordionTeaserCollectionQuery>(GetAccordionTeaserCollectionDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetAccordionTeaserCollection', 'query', variables);
     },
     GetSingleAccordion(variables: GetSingleAccordionQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<{ data: GetSingleAccordionQuery; errors?: GraphQLError[]; extensions?: unknown; headers: Headers; status: number; }> {
         return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetSingleAccordionQuery>(GetSingleAccordionDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetSingleAccordion', 'query', variables);
@@ -2200,10 +2200,10 @@ export type GetAccordionCollectionQueryVariables = Exact<{ [key: string]: never;
 
 export type GetAccordionCollectionQuery = { accordionCollection?: { __typename?: 'AccordionCollection', items: Array<{ __typename?: 'Accordion', internalName?: string | null, title?: string | null, sys: { __typename?: 'Sys', id: string }, accordionItemsCollection?: { __typename?: 'AccordionAccordionItemsCollection', total: number, items: Array<{ __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null };
 
-export type GetAccordionCollectionTeaserQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetAccordionTeaserCollectionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAccordionCollectionTeaserQuery = { accordionCollection?: { __typename?: 'AccordionCollection', items: Array<{ __typename?: 'Accordion', title?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null };
+export type GetAccordionTeaserCollectionQuery = { accordionCollection?: { __typename?: 'AccordionCollection', items: Array<{ __typename?: 'Accordion', title?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null };
 
 export type GetSingleAccordionQueryVariables = Exact<{
   id: Scalars['String']['input'];
