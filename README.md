@@ -14,7 +14,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 #### Plan
 
-[x] Create a simple plan to get a broad overview over the assignment.
+- [x] Create a simple plan to get a broad overview over the assignment.
 
 #### Read documentation
 
@@ -25,22 +25,22 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 create nextJs already comes with a good eslint configuration. Most likely no changes needed for this kind of project.
 
-[ ] prettier configuration?
-[ ] decide a folder structure
+- [ ] prettier configuration?
+- [x] decide a folder structure
 
 #### Secrets
 
 A simple .env file to keep secrets seems good enough.
 
-[ ] create a ".env" file
-[ ] create a ".env.template" file
+- [x] create a ".env" file
+- [x] create a ".env.template" file
 
 #### Data-fetching
 
 The tasks specifies that we should fetch the faq from a Contentful API.
 
-[ ] postman workspace
-[ ] decide to use GraphQL or REST. (task assignee asks for GraphQL, but OK to use REST)
+- [ ] postman workspace
+- [ ] decide to use GraphQL or REST. (task assignee asks for GraphQL, but OK to use REST)
 
 REST:
 
@@ -53,20 +53,20 @@ GraphQL:
 - the assignee (me) wants to use it.
 - the assignor encourages to use it.
 
-[ ] error handling
-[ ] log system (optional)
+- [ ] error handling
+- [ ] log system (optional)
 
 #### Data-visualizing
 
 The FAQ's should be displayed as accordions. Decide to implement the accordions with or without any third party package.
 Tailwindcss is already configured.
 
-[ ] implement a simple design system. (tokenization)
-[ ] use "React-aria-components" library for the main component. (great for accessibility).
-[ ] loading (skeleton?, spinner?)
-[ ] tests
-[ ] dark mode (optional - should be simple to implement by using design tokens)
-[ ] animations (optional)
+- [ ] implement a simple design system. (tokenization)
+- [ ] use "React-aria-components" library for the main component. (great for accessibility).
+- [ ] loading (skeleton?, spinner?)
+- [ ] tests
+- [ ] dark mode (optional - should be simple to implement by using design tokens)
+- [ ] animations (optional)
 
 #### SEO
 
