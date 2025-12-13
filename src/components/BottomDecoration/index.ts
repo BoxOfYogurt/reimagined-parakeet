@@ -1,0 +1,1 @@
+export { BottomDecoration } from "./BottomDecoration";

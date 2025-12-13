@@ -1,19 +1,5 @@
 :root {
-  /* --blue-1: rgb(107, 255, 255);
-  --blue-2: rgb(0, 121, 173);
-  --blue-3: rgb(13, 93, 154);
-  --blue-4: rgb(14, 64, 102);
-  --blue-5: rgb(15, 46, 71);
-  --blue-6: rgb(4, 31, 53);
-
-  --teal-1: rgb(235, 255, 247);
-  --teal-2: rgb(214, 241, 230);
-
-  --teal-3: rgb(0, 101, 101);
-  --teal-4: rgb(0, 86, 86);
-
-  --yellow-1: rgb(255, 252, 232); */
-
+  /** neutral gradient */
   --neutral-000: rgb(0, 0, 0);
   --neutral-100: rgb(22, 29, 40);
   --neutral-200: rgb(28, 35, 47);
@@ -26,6 +12,7 @@
   --neutral-900: rgb(165, 172, 182);
   --neutral-1000: rgb(223, 225, 229);
 
+  /** blue gradient */
   --blue-100: rgb(9, 30, 55);
   --blue-200: rgb(11, 35, 63);
   --blue-300: rgb(16, 43, 75);

@@ -1,5 +1,5 @@
 @theme {
-  /** TYPOGRAPHY - HEADING - lg - 80px */
+  /** TYPOGRAPHY - HEADING - LG - 80px */
   --text-heading-lg: 5rem;
   --text-heading-lg--line-height: 5rem;
   --text-heading-lg--letter-spacing: 0em;
@@ -9,38 +9,68 @@
   --text-heading-base--line-height: 3rem;
   --text-heading-base--letter-spacing: 0em;
 
-  /** TYPOGRAPHY - 3XL - 40px */
-  --text-3xl: 2.5rem;
-  --text-3xl--line-height: 2.25rem;
-  --text-3xl--letter-spacing: 0em;
+  /** TYPOGRAPHY - HEADING - SM - 40px */
+  --text-heading-sm: 2.5rem;
+  --text-heading-sm--line-height: 2.25rem;
+  --text-heading-sm--letter-spacing: 0em;
 
-  /** TYPOGRAPHY - 2XL - 24px */
-  --text-2xl: 1.5rem;
-  --text-2xl--line-height: 1.5rem;
-  --text-2xl--letter-spacing: 0em;
+  /** TYPOGRAPHY - SHORT - 2XL - 24px */
+  --text-short-2xl: 1.5rem;
+  --text-short-2xl--line-height: 1.5rem;
+  --text-short-2xl--letter-spacing: 0em;
 
-  /** TYPOGRAPHY - XL - 20px */
-  --text-xl: 1.25rem;
-  --text-xl--line-height: 1.5rem;
-  --text-xl--letter-spacing: 0em;
+  /** TYPOGRAPHY - SHORT - XL - 20px */
+  --text-short-xl: 1.25rem;
+  --text-short-xl--line-height: 1.5rem;
+  --text-short-xl--letter-spacing: 0em;
 
-  /** TYPOGRAPHY - LG - 18px */
-  --text-lg: 1.125rem;
-  --text-lg--line-height: 1.5rem;
-  --text-lg--letter-spacing: 0em;
+  /** TYPOGRAPHY - SHORT - LG - 18px */
+  --text-short-lg: 1.125rem;
+  --text-short-lg--line-height: 1.5rem;
+  --text-short-lg--letter-spacing: 0em;
 
-  /** TYPOGRAPHY - BASE - 16px */
-  --text-base: 1rem;
-  --text-base--line-height: 1.25rem;
-  --text-base--letter-spacing: 0em;
+  /** TYPOGRAPHY - SHORT - BASE - 16px */
+  --text-short-base: 1rem;
+  --text-short-base--line-height: 1.25rem;
+  --text-short-base--letter-spacing: 0em;
 
-  /** TYPOGRAPHY - SM - 14px */
-  --text-sm: 0.875rem;
-  --text-sm--line-height: 1rem;
-  --text-sm--letter-spacing: 0em;
+  /** TYPOGRAPHY - SHORT - SM - 14px */
+  --text-short-sm: 0.875rem;
+  --text-short-sm--line-height: 1rem;
+  --text-short-sm--letter-spacing: 0em;
 
-  /** TYPOGRAPHY - XS - 12px */
-  --text-xs: 0.75rem;
-  --text-xs--line-height: 1rem;
-  --text-xs--letter-spacing: 0em;
+  /** TYPOGRAPHY - SHORT - XS - 12px */
+  --text-short-xs: 0.75rem;
+  --text-short-xs--line-height: 1rem;
+  --text-short-xs--letter-spacing: 0em;
+
+  /** TYPOGRAPHY - LONG - 2XL - 24px */
+  --text-long-2xl: 1.5rem;
+  --text-long-2xl--line-height: 2rem;
+  --text-long-2xl--letter-spacing: 0em;
+
+  /** TYPOGRAPHY - LONG - XL - 20px */
+  --text-long-xl: 1.25rem;
+  --text-long-xl--line-height: 2rem;
+  --text-long-xl--letter-spacing: 0em;
+
+  /** TYPOGRAPHY - LONG - LG - 18px */
+  --text-long-lg: 1.125rem;
+  --text-long-lg--line-height: 2rem;
+  --text-long-lg--letter-spacing: 0em;
+
+  /** TYPOGRAPHY - LONG - BASE - 16px */
+  --text-long-base: 1rem;
+  --text-long-base--line-height: 1.75rem;
+  --text-long-base--letter-spacing: 0em;
+
+  /** TYPOGRAPHY - LONG - SM - 14px */
+  --text-long-sm: 0.875rem;
+  --text-long-sm--line-height: 1.25rem;
+  --text-long-sm--letter-spacing: 0em;
+
+  /** TYPOGRAPHY - LONG - XS - 12px */
+  --text-long-xs: 0.75rem;
+  --text-long-xs--line-height: 1.25rem;
+  --text-long-xs--letter-spacing: 0em;
 }
