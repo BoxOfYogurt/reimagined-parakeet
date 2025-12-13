@@ -1,0 +1,71 @@
+/** TYPOGRAPHY - 3XL */
+@utility typography-heading-lg-regular {
+  @apply font-sans text-heading-lg;
+}
+@utility typography-heading-lg-bold {
+  @apply font-sans font-bold text-heading-lg;
+}
+
+/** TYPOGRAPHY - 3XL */
+@utility typography-heading-base-regular {
+  @apply font-sans text-heading-base;
+}
+@utility typography-heading-base-bold {
+  @apply font-sans font-bold text-heading-base;
+}
+
+/** TYPOGRAPHY - 3XL */
+@utility typography-3xl-regular {
+  @apply font-sans text-3xl;
+}
+@utility typography-3xl-bold {
+  @apply font-sans font-bold text-3xl;
+}
+
+/** TYPOGRAPHY - 2XL */
+@utility typography-2xl-regular {
+  @apply font-sans text-2xl;
+}
+@utility typography-2xl-bold {
+  @apply font-sans font-bold text-2xl;
+}
+
+/** TYPOGRAPHY - XL */
+@utility typography-xl-regular {
+  @apply font-sans text-xl;
+}
+@utility typography-xl-bold {
+  @apply font-sans font-bold text-xl;
+}
+
+/** TYPOGRAPHY - LG */
+@utility typography-lg-regular {
+  @apply font-sans text-lg;
+}
+@utility typography-lg-bold {
+  @apply font-sans font-bold text-lg;
+}
+
+/** TYPOGRAPHY - BASE */
+@utility typography-base-regular {
+  @apply font-sans text-base;
+}
+@utility typography-base-bold {
+  @apply font-sans font-bold text-base;
+}
+
+/** TYPOGRAPHY - SM */
+@utility typography-sm-regular {
+  @apply font-sans text-sm;
+}
+@utility typography-sm-bold {
+  @apply font-sans font-bold text-sm;
+}
+
+/** TYPOGRAPHY - XS */
+@utility typography-xs-regular {
+  @apply font-sans text-xs;
+}
+@utility typography-xs-bold {
+  @apply font-sans font-bold text-xs;
+}
