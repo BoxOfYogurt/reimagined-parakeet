@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import { Key } from "react-aria-components";
 import { DisclosureGroupStateContext } from "./DisclosureGroupStateContext";
@@ -12,6 +14,7 @@ export type DisclosureGroupProps = {
   /** Whether multiple items can be expanded at the same time. */
   allowsMultipleExpanded?: boolean;
   children: React.ReactNode;
+  className?: string;
 } & (
   | {
       /** A set of keys for items that are expanded. */
@@ -30,7 +33,8 @@ export const DisclosureGroup = ({
   children,
   allowsMultipleExpanded = true,
   expandedKeys,
-  isDisabled = false,
+  isDisabled,
+  className,
   defaultExpandedKeys,
   onExpandedChange,
 }: DisclosureGroupProps) => {
@@ -91,7 +95,7 @@ export const DisclosureGroup = ({
         toggleKey,
       }}
     >
-      {children}
+      <div className={className}>{children}</div>
     </DisclosureGroupStateContext.Provider>
   );
 };
