@@ -1,29 +1,18 @@
 @import "tailwindcss";
 
 /** THEME IMPORTS */
+@import "./theme/theme_color.css";
 @import "./theme/theme_text.css";
 
 /** UTILITY IMPORTS */
 @import "./utility/utility_typography.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --font-sans: var(--font-dm-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-bg);
+  color: var(--color-fg);
   font-family: Arial, Helvetica, sans-serif;
 }
