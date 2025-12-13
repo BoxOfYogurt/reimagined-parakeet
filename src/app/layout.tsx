@@ -8,6 +8,8 @@ import { BottomDecoration } from "@/components";
 const DMSans = localFont({
   src: "./dm-sans-normal.woff2",
   variable: "--font-dm-sans",
+  preload: true,
+  fallback: ["Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +29,9 @@ export default function RootLayout({
         <header className="h-header-height py-5">
           <ApplicationLayout>
             <div className="relative inline-block">
-              <h1 className="typography-heading-lg-bold">Novacare</h1>
+              <h1 className="typography-heading-base-bold sm:typography-heading-lg-bold">
+                Novacare
+              </h1>
               <Link href="/" className="before:absolute before:inset-0">
                 <span className="sr-only">Gå til forsiden</span>
               </Link>
