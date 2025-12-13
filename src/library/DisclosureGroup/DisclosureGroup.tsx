@@ -26,6 +26,7 @@ export type DisclosureGroupProps = {
 );
 
 export const DisclosureGroup = ({
+  id,
   children,
   allowsMultipleExpanded = true,
   expandedKeys,
@@ -46,12 +47,12 @@ export const DisclosureGroup = ({
       process.env.NODE_ENV === "development"
     ) {
       console.warn(
-        `WARN: A component changed from ${
+        `WARN: The DisclosureGroup with id "${id}" changed from ${
           isControlledRef.current ? "controlled" : "uncontrolled"
         } to ${isControlled ? "controlled" : "uncontrolled"}.`
       );
     }
-  }, [isControlled]);
+  }, [isControlled, id]);
 
   const getNewState = (
     toggleKey: Key,
