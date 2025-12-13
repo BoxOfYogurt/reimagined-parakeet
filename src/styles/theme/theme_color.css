@@ -1,86 +1,50 @@
 :root {
-  --white: rgb(255, 255, 255);
-  --black: rgb(0, 0, 0);
+  /** neutral gradient */
+  --neutral-000: rgb(0, 0, 0);
+  --neutral-100: rgb(22, 29, 40);
+  --neutral-200: rgb(28, 35, 47);
+  --neutral-300: rgb(36, 43, 55);
+  --neutral-400: rgb(46, 54, 65);
+  --neutral-500: rgb(101, 109, 123);
+  --neutral-600: rgb(119, 127, 141);
+  --neutral-700: rgb(138, 146, 160);
+  --neutral-800: rgb(148, 155, 168);
+  --neutral-900: rgb(165, 172, 182);
+  --neutral-1000: rgb(223, 225, 229);
 
-  --blue-1: rgb(107, 255, 255);
-  --blue-2: rgb(0, 121, 173);
-  --blue-3: rgb(13, 93, 154);
-  --blue-4: rgb(14, 64, 102);
-  --blue-5: rgb(15, 46, 71);
-  --blue-6: rgb(4, 31, 53);
-
-  --teal-1: rgb(235, 255, 247);
-  --teal-2: rgb(214, 241, 230);
-
-  --teal-3: rgb(0, 101, 101);
-  --teal-4: rgb(0, 86, 86);
-
-  --yellow-1: rgb(255, 252, 232);
-  --yellow-2: rgb(255, 247, 202);
-
-  --brand-1: rgb(93, 185, 244);
-  --brand-2: rgb(11, 167, 235);
-  --brand-3: rgb(13, 93, 154);
-  --brand-4: rgb(18, 79, 126);
+  /** blue gradient */
+  --blue-100: rgb(9, 30, 55);
+  --blue-200: rgb(11, 35, 63);
+  --blue-300: rgb(16, 43, 75);
+  --blue-400: rgb(23, 54, 92);
+  --blue-500: rgb(46, 109, 184);
+  --blue-600: rgb(69, 128, 202);
+  --blue-700: rgb(95, 148, 216);
+  --blue-800: rgb(109, 157, 221);
+  --blue-900: rgb(132, 174, 230);
+  --blue-1000: rgb(169, 203, 250);
 }
 
-/* light theme */
 @theme inline {
   --color-*: initial;
 
-  /** backgrounds **/
-  --color-background: var(--teal-1);
-  --color-background-secondary: var(--teal-2);
-  --color-background-tertiary: var(--teal-2);
+  --color-bg: var(--neutral-200);
+  --color-fg: var(--neutral-1000);
 
-  /** text **/
-  --color-text: var(--black);
-  --color-text-highlight: var(--blue-1);
-  --color-text-heading: var(--blue-3);
-  --color-text-heading2: var(--blue-4);
+  /* surface */
+  --color-surface: var(--neutral-200);
+  --color-surface-raised: var(--neutral-300);
+  --color-surface-sunken: var(--neutral-100);
 
-  --color-text-on-surface: var(--yellow-1);
-  --color-text-on-surface-secondary: var(--blue-6);
+  --color-surface-brand: var(--blue-200);
+  --color-surface-brand-raised: var(--blue-300);
+  --color-surface-brand-sunken: var(--blue-100);
 
-  /** surfaces **/
-  --color-surface: var(--blue-6);
-  --color-surface-secondary: var(--yellow-1);
+  /* border */
+  --color-border-neutral: var(--neutral-300);
 
-  /** icons **/
+  /* text */
+  --color-text: var(--neutral-1000);
+  --color-heading: var(--blue-1000);
+  --color-subtle: var(--neutral-700);
 }
-
-/*
-:root {
-  --color-bg: rgb(235, 255, 247);
-  --color-bg-transparent: rgba(235, 255, 247, 0.4);
-  --color-bg-secondary: rgb(214, 241, 230);
-  --color-bg-tertiary: rgb(214, 241, 230);
-  --color-fg: rgb(4, 31, 53);
-  --color-fg-secondary: rgb(0, 0, 0);
-  --color-heading: rgb(13, 93, 154);
-  --color-heading2: rgb(14, 64, 102);
-  --color-text: rgb(0, 0, 0);
-  --color-text-inverted: rgb(255, 255, 255);
-  --color-link: rgb(0, 101, 101);
-  --color-link2: rgb(0, 86, 86);
-  --color-link-inverted: rgb(107, 255, 255);
-  --color-link-hover: rgb(0, 121, 173);
-  --color-link-hover-inverted: rgb(255, 247, 202);
-
-  --color-dark-bg: rgb(4, 31, 53);
-  --color-dark-bg-transparent: rgba(4, 31, 53, 0.4);
-  --color-dark-bg-secondary: rgb(15, 46, 71);
-  --color-dark-bg-tertiary: rgb(14, 64, 102);
-  --color-dark-fg: rgb(255, 252, 232);
-  --color-dark-fg-secondary: rgb(255, 252, 232);
-  --color-dark-heading: rgb(255, 247, 202);
-  --color-dark-heading2: rgb(255, 252, 232);
-  --color-dark-text: rgb(255, 255, 255);
-  --color-dark-text-inverted: rgb(0, 0, 0);
-  --color-dark-link: rgb(107, 255, 255);
-  --color-dark-link2: rgb(107, 255, 255);
-  --color-dark-link-inverted: rgb(0, 101, 101);
-  --color-dark-link-hover: rgb(255, 247, 202);
-  --color-dark-link-hover-inverted: rgb(0, 121, 173);
-}
-  */

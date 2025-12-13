@@ -10,11 +10,13 @@
     "gen:graphql:sdk": "graphql-codegen --config graphql.config.ts"
   },
   "dependencies": {
+    "classix": "^2.2.6",
     "graphql": "^16.12.0",
     "graphql-request": "^7.3.5",
     "graphql-tag": "^2.12.6",
     "next": "16.0.10",
     "react": "19.2.1",
+    "react-aria-components": "^1.13.0",
     "react-dom": "19.2.1"
   },
   "devDependencies": {
@@ -31,6 +33,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.8",
     "tailwindcss": "^4",
+    "tailwindcss-react-aria-components": "^2.0.1",
     "typescript": "^5"
   }
 }

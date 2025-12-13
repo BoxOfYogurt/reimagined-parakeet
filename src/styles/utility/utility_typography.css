@@ -1,0 +1,134 @@
+/** ---------------- LONG ------------------*/
+/*
+  heading variants are used for headings.
+*/
+
+/** TYPOGRAPHY - HEADING - LG */
+@utility typography-heading-lg-regular {
+  @apply font-sans text-heading-lg;
+}
+@utility typography-heading-lg-bold {
+  @apply font-sans font-bold text-heading-lg;
+}
+
+/** TYPOGRAPHY - HEADING - BASE */
+@utility typography-heading-base-regular {
+  @apply font-sans text-heading-base;
+}
+@utility typography-heading-base-bold {
+  @apply font-sans font-bold text-heading-base;
+}
+
+/** TYPOGRAPHY - HEADING - SM */
+@utility typography-heading-sm-regular {
+  @apply font-sans text-heading-sm;
+}
+@utility typography-heading-sm-bold {
+  @apply font-sans font-bold text-heading-sm;
+}
+
+/** ---------------- LONG ------------------*/
+/*
+  short variants are used for text that should not wrap (buttons, inputs etc.). The only difference between "long" and "short" is line-height
+*/
+
+/** TYPOGRAPHY - 2XL */
+@utility typography-short-2xl-regular {
+  @apply font-sans text-short-2xl;
+}
+@utility typography-short-2xl-bold {
+  @apply font-sans font-bold text-short-2xl;
+}
+
+/** TYPOGRAPHY - XL */
+@utility typography-short-xl-regular {
+  @apply font-sans text-short-xl;
+}
+@utility typography-short-xl-bold {
+  @apply font-sans font-bold text-short-xl;
+}
+
+/** TYPOGRAPHY - LG */
+@utility typography-short-lg-regular {
+  @apply font-sans text-short-lg;
+}
+@utility typography-short-lg-bold {
+  @apply font-sans font-bold text-short-lg;
+}
+
+/** TYPOGRAPHY - BASE */
+@utility typography-short-base-regular {
+  @apply font-sans text-short-base;
+}
+@utility typography-short-base-bold {
+  @apply font-sans font-bold text-short-base;
+}
+
+/** TYPOGRAPHY - SM */
+@utility typography-short-sm-regular {
+  @apply font-sans text-short-sm;
+}
+@utility typography-short-sm-bold {
+  @apply font-sans font-bold text-short-sm;
+}
+
+/** TYPOGRAPHY - XS */
+@utility typography-short-xs-regular {
+  @apply font-sans text-short-xs;
+}
+@utility typography-short-xs-bold {
+  @apply font-sans font-bold text-short-xs;
+}
+
+/** ---------------- LONG ------------------*/
+/*
+  long variants are used for text that would most likely wrap. The only difference between "long" and "short" is line-height
+*/
+
+/** TYPOGRAPHY - 2XL */
+@utility typography-long-2xl-regular {
+  @apply font-sans text-long-2xl;
+}
+@utility typography-long-2xl-bold {
+  @apply font-sans font-bold text-long-2xl;
+}
+
+/** TYPOGRAPHY - XL */
+@utility typography-long-xl-regular {
+  @apply font-sans text-long-xl;
+}
+@utility typography-long-xl-bold {
+  @apply font-sans font-bold text-long-xl;
+}
+
+/** TYPOGRAPHY - LG */
+@utility typography-long-lg-regular {
+  @apply font-sans text-long-lg;
+}
+@utility typography-long-lg-bold {
+  @apply font-sans font-bold text-long-lg;
+}
+
+/** TYPOGRAPHY - BASE */
+@utility typography-long-base-regular {
+  @apply font-sans text-long-base;
+}
+@utility typography-long-base-bold {
+  @apply font-sans font-bold text-long-base;
+}
+
+/** TYPOGRAPHY - SM */
+@utility typography-long-sm-regular {
+  @apply font-sans text-long-sm;
+}
+@utility typography-long-sm-bold {
+  @apply font-sans font-bold text-long-sm;
+}
+
+/** TYPOGRAPHY - XS */
+@utility typography-long-xs-regular {
+  @apply font-sans text-long-xs;
+}
+@utility typography-long-xs-bold {
+  @apply font-sans font-bold text-long-xs;
+}

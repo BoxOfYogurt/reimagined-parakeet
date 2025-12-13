@@ -1,16 +1,26 @@
 @theme {
-  --spacing-remaining_screen_height: calc(100svh - var(--header-height));
-}
+  --spacing-header-height: 9rem;
+  /** calculates the height of the viewport - the header. */
+  --spacing-content-height: calc(100svh - var(--spacing-header-height));
 
-@layer base {
-  @media (width >= theme(--breakpoint-md)) {
-    :root {
-      --header-height: 5rem;
-    }
-  }
-}
-@media (width < theme(--breakpoint-md)) {
-  :root {
-    --header-height: 3.75rem;
-  }
+  --spacing-layout-large: 88rem;
+  --spacing-layout-large-gutter: 1rem;
+  --spacing-layout-large-gutter-xs: 1rem;
+  --spacing-layout-large-gutter-sm: 2rem;
+  --spacing-layout-large-gutter-md: 4rem;
+  --spacing-layout-large-gutter-lg: 5rem;
+
+  --spacing-layout-regular: 70rem;
+  --spacing-layout-regular-gutter: 1rem;
+  --spacing-layout-regular-gutter-xs: 1rem;
+  --spacing-layout-regular-gutter-sm: 2rem;
+  --spacing-layout-regular-gutter-md: 4rem;
+  --spacing-layout-regular-gutter-lg: 5rem;
+
+  --spacing-layout-small: 45rem;
+  --spacing-layout-small-gutter: 1rem;
+  --spacing-layout-small-gutter-xs: 1rem;
+  --spacing-layout-small-gutter-sm: 2rem;
+  --spacing-layout-small-gutter-md: 4rem;
+  --spacing-layout-small-gutter-lg: 5rem;
 }
