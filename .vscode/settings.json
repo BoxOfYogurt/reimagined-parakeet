@@ -1,11 +1,11 @@
 {
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  // Use Prettier as the default formatter
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "prettier.prettier-vscode",
+
+  // Ensure the extension uses the workspace Prettier (v3)
+  "prettier.prettierPath": "./node_modules/prettier",
+
+  // Point explicitly to your ESM config
+  "prettier.configPath": "prettier.config.mjs"
 }
