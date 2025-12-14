@@ -1,9 +1,9 @@
 "use client";
 
+import { Heading } from "react-aria-components";
 import { AccordionTeaserBlockFragment } from "@/graphql/sdk/sdk";
 import { ArrowRightIcon } from "@/icons/ArrowRightIcon";
 import Link from "next/link";
-import { Heading } from "react-aria-components";
 
 type AccordionTeaserBlockProps = AccordionTeaserBlockFragment & {
   url: string;
@@ -14,12 +14,12 @@ export const AccordionTeaserBlock = ({
   url,
 }: AccordionTeaserBlockProps) => {
   return (
-    <div className="relative rounded-xl h-16 px-5 bg-surface-sunken flex items-center justify-between">
+    <div className="bg-surface-sunken relative flex h-16 items-center justify-between rounded-xl px-5">
       <Heading className="typography-short-2xl-bold">{title}</Heading>
       <Link
         href={url}
-        aria-label={`gå til ${title}`}
-        className="hover:underline before:absolute before:inset-0 font-mono text-text-on-surface-secondary"
+        aria-label={`go to ${title}`}
+        className="text-text-on-surface-secondary font-mono before:absolute before:inset-0"
       >
         <span className="text-2xl">
           <ArrowRightIcon />

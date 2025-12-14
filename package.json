@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "gen:graphql:sdk": "graphql-codegen --config graphql.config.ts"
+    "gen:graphql:sdk": "graphql-codegen --config graphql.config.ts",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "classix": "^2.2.6",
@@ -27,11 +28,14 @@
     "@graphql-codegen/typescript-graphql-request": "^6.3.0",
     "@graphql-codegen/typescript-operations": "^5.0.6",
     "@tailwindcss/postcss": "^4",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.8",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4",
     "tailwindcss-react-aria-components": "^2.0.1",
     "typescript": "^5"

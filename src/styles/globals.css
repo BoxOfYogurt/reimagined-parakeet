@@ -1,12 +1,12 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /** THEME IMPORTS */
-@import "./theme/theme_color.css";
-@import "./theme/theme_text.css";
-@import "./theme/theme_spacing.css";
+@import './theme/theme_color.css';
+@import './theme/theme_text.css';
+@import './theme/theme_spacing.css';
 
 /** UTILITY IMPORTS */
-@import "./utility/utility_typography.css";
+@import './utility/utility_typography.css';
 
 @theme inline {
   --font-sans: var(--font-dm-sans);

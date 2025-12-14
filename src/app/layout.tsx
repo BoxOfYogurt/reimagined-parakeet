@@ -1,9 +1,9 @@
+import { BottomDecoration } from "@/components";
+import { ApplicationLayout } from "@/library";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "@/styles/globals.css";
-import { ApplicationLayout } from "@/library";
 import Link from "next/link";
-import { BottomDecoration } from "@/components";
 
 const DMSans = localFont({
   src: "./dm-sans-normal.woff2",
@@ -25,27 +25,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no">
-      <body className={`${DMSans.variable} antialiased min-h-screen`}>
-        <header className="h-header-height py-5">
-          <ApplicationLayout>
+      <body className={`${DMSans.variable} min-h-screen antialiased`}>
+        <header className="h-dynamic-header-height">
+          <ApplicationLayout width="large" className="h-full items-center">
             <div className="relative inline-block">
-              <h1 className="typography-heading-base-bold sm:typography-heading-lg-bold">
+              <span className="typography-heading-base-bold sm:typography-heading-lg-bold">
                 Novacare
-              </h1>
+              </span>
               <Link href="/" className="before:absolute before:inset-0">
-                <span className="sr-only">Gå til forsiden</span>
+                <span className="sr-only">go to startpage</span>
               </Link>
             </div>
             <p className="typography-sm-regular text-subtle">Task Assignment</p>
           </ApplicationLayout>
         </header>
-        <main className="relative min-h-content-height pb-20 sm:pb-24">
+        <main className="min-h-content-height relative pb-20 sm:pb-24">
           {children}
           <div className="absolute inset-x-0 bottom-0">
             <BottomDecoration />
           </div>
         </main>
-        <footer className="py-5 bg-surface-brand-sunken">
+        <footer className="bg-surface-brand-sunken py-5">
           <ApplicationLayout width="small">
             <p className="typography-sm-regular text-subtle text-center">
               Created by Mads Østrem - 2025

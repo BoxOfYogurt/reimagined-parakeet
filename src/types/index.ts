@@ -1,2 +1,2 @@
-export * from "./SafeGraphResponse";
-export * from "./ContentfulGraphQLExtension";
+export * from './SafeGraphResponse';
+export * from './ContentfulGraphQLExtension';

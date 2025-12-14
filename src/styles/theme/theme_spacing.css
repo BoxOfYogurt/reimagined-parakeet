@@ -1,9 +1,9 @@
 @theme {
-  --spacing-header-height: 9rem;
+  --spacing-dynamic-header-height: var(--dynamic-header-height);
   /** calculates the height of the viewport - the header. */
-  --spacing-content-height: calc(100svh - var(--spacing-header-height));
+  --spacing-content-height: calc(100svh - var(--spacing-dynamic-header-height));
 
-  --spacing-layout-large: 88rem;
+  --spacing-layout-large: 110rem;
   --spacing-layout-large-gutter: 1rem;
   --spacing-layout-large-gutter-xs: 1rem;
   --spacing-layout-large-gutter-sm: 2rem;
@@ -23,4 +23,18 @@
   --spacing-layout-small-gutter-sm: 2rem;
   --spacing-layout-small-gutter-md: 4rem;
   --spacing-layout-small-gutter-lg: 5rem;
+}
+
+@layer base {
+  @media (width >= theme(--breakpoint-sm)) {
+    :root {
+      --dynamic-header-height: 9rem;
+    }
+  }
+
+  @media (width <= theme(--breakpoint-sm)) {
+    :root {
+      --dynamic-header-height: 6rem;
+    }
+  }
 }

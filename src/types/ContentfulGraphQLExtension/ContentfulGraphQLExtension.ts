@@ -1,4 +1,4 @@
-import { ContentfulGraphQLExtensionCodeType } from "@/constants/ContentfulGraphQLExtensionCode";
+import { ContentfulGraphQLExtensionCodeType } from '@/constants/ContentfulGraphQLExtensionCode';
 
 export type ContentfulGraphQLExtension = {
   code: ContentfulGraphQLExtensionCodeType;

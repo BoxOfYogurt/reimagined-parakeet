@@ -1,4 +1,4 @@
-import { GraphQLError } from "graphql/error";
+import { GraphQLError } from 'graphql/error';
 
 export type SafeGraphResponse<TData, TError, TPartialData = TData> =
   | {
@@ -6,7 +6,7 @@ export type SafeGraphResponse<TData, TError, TPartialData = TData> =
       data: TData;
     }
   | {
-      success: "partially";
+      success: 'partially';
       data: TPartialData;
       errors: readonly GraphQLError[];
     }

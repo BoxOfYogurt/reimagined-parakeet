@@ -1,1 +1,1 @@
-export { AccordionBlock } from "./AccordionBlock";
+export { AccordionBlock } from './AccordionBlock';

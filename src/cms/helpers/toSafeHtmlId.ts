@@ -1,3 +1,3 @@
 export function toSafeHtmlId(text: string) {
-  return text.replace(/ /g, "-").toLocaleLowerCase();
+  return text.replace(/ /g, '-').toLocaleLowerCase();
 }

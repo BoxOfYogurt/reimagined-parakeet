@@ -2,4 +2,4 @@ export {
   ApplicationLayout,
   type ApplicationLayoutProps,
   type ApplicationLayoutWidth,
-} from "./ApplicationLayout";
+} from './ApplicationLayout';

@@ -1,73 +1,71 @@
-# Reimagined parakeet
+# Reimagined Parakeet
 
-This project is a next application. To run the development server, do:
+A Next.js (App Router) application that fetches FAQ content from Contentful via GraphQL and renders it using accessible, reusable UI components.
 
-```bash
-npm run dev
-```
+## Quick Start
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Install dependencies: `npm install`
+- To get the actual data, you need to create `.env` file with Contentful credentials.
+- Start dev server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  ```bash
+  npm run dev
+  ```
 
-### Project outline
+- Open `http://localhost:3000` in your browser.
 
-#### Plan
+## Environment
 
-- [x] Create a simple plan to get a broad overview over the assignment.
+Create a `.env` based on `.env.template` and add your Contentful credentials.
+Do not commit real secrets. `.env` is git-ignored.
 
-#### Read documentation
+## Architecture
 
-- read NextJs documentation to get familiar with it.
-- read Contentful documentation to get familiar with it.
+- App Router: Pages and layouts under `src/app` (server components by default).
+- Data Layer: Contentful GraphQL client in `src/clients/contentfulGraphqlClient` and queries/fragments in `src/graphql`.
+- Typed SDK: Generated/typed helpers in `src/graphql/sdk` for safe data access.
+- UI Components: Reusable, theme-aware components in `src/library` and `src/components`.
+- Styling: Design tokens (CSS variables) and utilities in `src/styles`.
+- Types: Shared TypeScript models in `src/types`.
 
-#### Development environment (linting, formatting, folder structure)
+## Tech Stack
 
-create nextJs already comes with a good eslint configuration. Most likely no changes needed for this kind of project.
+- Next.js App Router (React 18)
+- TypeScript
+- Contentful (GraphQL)
+- `graphql-request` + typed SDK in `src/graphql/sdk`
+- `react-aria-components` for accessible UI primitives
+- Tailwind CSS v4 + custom CSS variables in `src/styles/theme`
 
-- [ ] prettier configuration?
-- [x] decide a folder structure
+## Development
 
-#### Secrets
+- Linting: Next.js includes ESLint; project uses TypeScript.
+- Formatting: Prettier
+- CSS: Tailwind v4 utilities + custom tokens; theme files live in `src/styles/theme`.
+- Accessibility: Components leverage `react-aria-components` for semantics and keyboard support.
 
-A simple .env file to keep secrets seems good enough.
+## Data Fetching Pattern
 
-- [x] create a ".env" file
-- [x] create a ".env.template" file
+- Fetch in server components for security and performance.
+- Example: `AccordionTeaserList` (server component) calls the Contentful client and renders blocks.
+- For reuse across routes, colocate server components under `src/app/_components` or keep them near their route.
+- If you need a client boundary, expose a route handler under `src/app/api/...` and fetch from the client.
 
-#### Data-fetching
+## Project Tasks (WIP)
 
-The tasks specifies that we should fetch the faq from a Contentful API.
+- Read Next.js and Contentful docs.
+- Decide REST vs GraphQL (GraphQL chosen).
+- Error handling and logging (pending).
+- Visuals: design tokens, skeletons, dark mode, animations (optional).
+- Tests (pending).
 
-- [ ] postman workspace
-- [ ] decide to use GraphQL or REST. (task assignee asks for GraphQL, but OK to use REST)
+## Scripts
 
-REST:
+- `npm run dev`: Start local development
+- `npm run build`: Production build
+- `npm start`: Run built app
 
-- no automatic types (which i would get from graphQL-codegen) - might have to implement zod.
-- the assignee (me) wants to use GraphQL
+## Notes
 
-GraphQL:
-
-- graphQL-codegen and graphql-request makes development pretty nice.
-- the assignee (me) wants to use it.
-- the assignor encourages to use it.
-
-- [ ] error handling
-- [ ] log system (optional)
-
-#### Data-visualizing
-
-The FAQ's should be displayed as accordions. Decide to implement the accordions with or without any third party package.
-Tailwindcss is already configured.
-
-- [ ] implement a simple design system. (tokenization)
-- [ ] use "React-aria-components" library for the main component. (great for accessibility).
-- [ ] loading (skeleton?, spinner?)
-- [ ] tests
-- [ ] dark mode (optional - should be simple to implement by using design tokens)
-- [ ] animations (optional)
-
-#### SEO
-
-Simple meta tags should be enough for this "one page" application.
+- Use server components for fetching Contentful to keep tokens private.
+- Keep heading levels and landmark semantics (`main`, `section`) for accessibility.

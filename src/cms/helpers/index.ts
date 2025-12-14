@@ -1,1 +1,1 @@
-export * from "./toSafeHtmlId";
+export * from './toSafeHtmlId';

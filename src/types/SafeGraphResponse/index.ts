@@ -1,1 +1,1 @@
-export type { SafeGraphResponse } from "./SafeGraphResponse";
+export type { SafeGraphResponse } from './SafeGraphResponse';

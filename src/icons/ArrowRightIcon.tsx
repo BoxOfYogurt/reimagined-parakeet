@@ -7,12 +7,7 @@ export const ArrowRightIcon = () => (
     aria-hidden="true"
     role="presentation"
   >
-    <path
-      d="M5 12h12"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-    />
+    <path d="M5 12h12" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
     <path
       d="M13 6l6 6-6 6"
       stroke="currentColor"

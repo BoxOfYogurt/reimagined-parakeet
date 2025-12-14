@@ -1,1 +1,1 @@
-export type { ContentfulGraphQLExtension } from "./ContentfulGraphQLExtension";
+export type { ContentfulGraphQLExtension } from './ContentfulGraphQLExtension';

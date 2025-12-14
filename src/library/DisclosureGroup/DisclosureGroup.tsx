@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { useEffect } from "react";
-import { Key } from "react-aria-components";
-import { DisclosureGroupStateContext } from "./DisclosureGroupStateContext";
+import React, { useEffect } from 'react';
+import { Key } from 'react-aria-components';
+import { DisclosureGroupStateContext } from './DisclosureGroupStateContext';
 
 export type DisclosureGroupProps = {
   /** The unique identifier for the disclosure group. */
@@ -42,26 +42,20 @@ export const DisclosureGroup = ({
   const isControlledRef = React.useRef(isControlled);
 
   const [internalState, setInternalState] = React.useState<Key[]>(
-    () => (!isControlled && Array.from(defaultExpandedKeys || [])) || []
+    () => (!isControlled && Array.from(defaultExpandedKeys || [])) || [],
   );
 
   useEffect(() => {
-    if (
-      isControlledRef.current !== isControlled &&
-      process.env.NODE_ENV === "development"
-    ) {
+    if (isControlledRef.current !== isControlled && process.env.NODE_ENV === 'development') {
       console.warn(
         `WARN: The DisclosureGroup with id "${id}" changed from ${
-          isControlledRef.current ? "controlled" : "uncontrolled"
-        } to ${isControlled ? "controlled" : "uncontrolled"}.`
+          isControlledRef.current ? 'controlled' : 'uncontrolled'
+        } to ${isControlled ? 'controlled' : 'uncontrolled'}.`,
       );
     }
   }, [isControlled, id]);
 
-  const getNewState = (
-    toggleKey: Key,
-    previousState: Iterable<Key> = []
-  ): Key[] => {
+  const getNewState = (toggleKey: Key, previousState: Iterable<Key> = []): Key[] => {
     const state = new Set(previousState);
     if (allowsMultipleExpanded) {
       if (state.has(toggleKey)) state.delete(toggleKey);

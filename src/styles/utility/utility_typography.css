@@ -5,26 +5,26 @@
 
 /** TYPOGRAPHY - HEADING - LG */
 @utility typography-heading-lg-regular {
-  @apply font-sans text-heading-lg;
+  @apply text-heading-lg font-sans;
 }
 @utility typography-heading-lg-bold {
-  @apply font-sans font-bold text-heading-lg;
+  @apply text-heading-lg font-sans font-bold;
 }
 
 /** TYPOGRAPHY - HEADING - BASE */
 @utility typography-heading-base-regular {
-  @apply font-sans text-heading-base;
+  @apply text-heading-base font-sans;
 }
 @utility typography-heading-base-bold {
-  @apply font-sans font-bold text-heading-base;
+  @apply text-heading-base font-sans font-bold;
 }
 
 /** TYPOGRAPHY - HEADING - SM */
 @utility typography-heading-sm-regular {
-  @apply font-sans text-heading-sm;
+  @apply text-heading-sm font-sans;
 }
 @utility typography-heading-sm-bold {
-  @apply font-sans font-bold text-heading-sm;
+  @apply text-heading-sm font-sans font-bold;
 }
 
 /** ---------------- LONG ------------------*/
@@ -34,50 +34,50 @@
 
 /** TYPOGRAPHY - 2XL */
 @utility typography-short-2xl-regular {
-  @apply font-sans text-short-2xl;
+  @apply text-short-2xl font-sans;
 }
 @utility typography-short-2xl-bold {
-  @apply font-sans font-bold text-short-2xl;
+  @apply text-short-2xl font-sans font-bold;
 }
 
 /** TYPOGRAPHY - XL */
 @utility typography-short-xl-regular {
-  @apply font-sans text-short-xl;
+  @apply text-short-xl font-sans;
 }
 @utility typography-short-xl-bold {
-  @apply font-sans font-bold text-short-xl;
+  @apply text-short-xl font-sans font-bold;
 }
 
 /** TYPOGRAPHY - LG */
 @utility typography-short-lg-regular {
-  @apply font-sans text-short-lg;
+  @apply text-short-lg font-sans;
 }
 @utility typography-short-lg-bold {
-  @apply font-sans font-bold text-short-lg;
+  @apply text-short-lg font-sans font-bold;
 }
 
 /** TYPOGRAPHY - BASE */
 @utility typography-short-base-regular {
-  @apply font-sans text-short-base;
+  @apply text-short-base font-sans;
 }
 @utility typography-short-base-bold {
-  @apply font-sans font-bold text-short-base;
+  @apply text-short-base font-sans font-bold;
 }
 
 /** TYPOGRAPHY - SM */
 @utility typography-short-sm-regular {
-  @apply font-sans text-short-sm;
+  @apply text-short-sm font-sans;
 }
 @utility typography-short-sm-bold {
-  @apply font-sans font-bold text-short-sm;
+  @apply text-short-sm font-sans font-bold;
 }
 
 /** TYPOGRAPHY - XS */
 @utility typography-short-xs-regular {
-  @apply font-sans text-short-xs;
+  @apply text-short-xs font-sans;
 }
 @utility typography-short-xs-bold {
-  @apply font-sans font-bold text-short-xs;
+  @apply text-short-xs font-sans font-bold;
 }
 
 /** ---------------- LONG ------------------*/
@@ -87,48 +87,48 @@
 
 /** TYPOGRAPHY - 2XL */
 @utility typography-long-2xl-regular {
-  @apply font-sans text-long-2xl;
+  @apply text-long-2xl font-sans;
 }
 @utility typography-long-2xl-bold {
-  @apply font-sans font-bold text-long-2xl;
+  @apply text-long-2xl font-sans font-bold;
 }
 
 /** TYPOGRAPHY - XL */
 @utility typography-long-xl-regular {
-  @apply font-sans text-long-xl;
+  @apply text-long-xl font-sans;
 }
 @utility typography-long-xl-bold {
-  @apply font-sans font-bold text-long-xl;
+  @apply text-long-xl font-sans font-bold;
 }
 
 /** TYPOGRAPHY - LG */
 @utility typography-long-lg-regular {
-  @apply font-sans text-long-lg;
+  @apply text-long-lg font-sans;
 }
 @utility typography-long-lg-bold {
-  @apply font-sans font-bold text-long-lg;
+  @apply text-long-lg font-sans font-bold;
 }
 
 /** TYPOGRAPHY - BASE */
 @utility typography-long-base-regular {
-  @apply font-sans text-long-base;
+  @apply text-long-base font-sans;
 }
 @utility typography-long-base-bold {
-  @apply font-sans font-bold text-long-base;
+  @apply text-long-base font-sans font-bold;
 }
 
 /** TYPOGRAPHY - SM */
 @utility typography-long-sm-regular {
-  @apply font-sans text-long-sm;
+  @apply text-long-sm font-sans;
 }
 @utility typography-long-sm-bold {
-  @apply font-sans font-bold text-long-sm;
+  @apply text-long-sm font-sans font-bold;
 }
 
 /** TYPOGRAPHY - XS */
 @utility typography-long-xs-regular {
-  @apply font-sans text-long-xs;
+  @apply text-long-xs font-sans;
 }
 @utility typography-long-xs-bold {
-  @apply font-sans font-bold text-long-xs;
+  @apply text-long-xs font-sans font-bold;
 }

@@ -1,2 +1,2 @@
-export { DisclosureGroup } from "./DisclosureGroup";
-export { DisclosureGroupStateContext } from "./DisclosureGroupStateContext";
+export { DisclosureGroup } from './DisclosureGroup';
+export { DisclosureGroupStateContext } from './DisclosureGroupStateContext';
