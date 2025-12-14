@@ -1,10 +1,8 @@
 # Styling
 
-A design system can be developed over many months, based on the scale of the application and the "owner's" brand.
+A design system evolves over time, often over months, depending on the application’s scale and the brand’s requirements.
 
-Because i have free reigns when it comes to use of colors, i can never really be content (one search on google "cool website design", and i be like "...well, time to change my colors") :P
-
-To prevent me from using all my time changing colors, and adjusting the theme, Ive been inspired by Navikt [Aksel - Darkside](https://aksel.nav.no/grunnleggende/darkside/design-tokens) to keep the use of colors and tokens as minimal as possible.
+With broad freedom around color choices, it’s easy to fall into constant tweaking—one inspiring design and suddenly everything changes. To avoid endless iterations, this project is deliberately conservative with color usage and token definitions, inspired by Navikt’s Aksel Darkside approach to keeping tokens minimal and focused.
 
 ## THEME
 

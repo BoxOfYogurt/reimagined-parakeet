@@ -1,5 +1,7 @@
 # Reimagined Parakeet
 
+Novacare technical assignment
+
 A Next.js (App Router) application that fetches FAQ content from Contentful via GraphQL and renders it using accessible, reusable UI components.
 
 ## Quick Start
@@ -22,7 +24,7 @@ Do not commit real secrets. `.env` is git-ignored.
 ## Architecture
 
 - App Router: Pages and layouts under `src/app` (server components by default).
-- Data Layer: Contentful GraphQL client in `src/clients/contentfulGraphqlClient` and queries/fragments in `src/graphql`.
+- Data Layer: Contentful GraphQL client in `src/clients/contentfulGraphqlClient` and queries/fragments in `src/graphql`. Fragments for cms blocks are located together. `src/cms/blocks/*`
 - Typed SDK: Generated/typed helpers in `src/graphql/sdk` for safe data access.
 - UI Components: Reusable, theme-aware components in `src/library` and `src/components`.
 - Styling: Design tokens (CSS variables) and utilities in `src/styles`.
@@ -51,21 +53,9 @@ Do not commit real secrets. `.env` is git-ignored.
 - For reuse across routes, colocate server components under `src/app/_components` or keep them near their route.
 - If you need a client boundary, expose a route handler under `src/app/api/...` and fetch from the client.
 
-## Project Tasks (WIP)
-
-- Read Next.js and Contentful docs.
-- Decide REST vs GraphQL (GraphQL chosen).
-- Error handling and logging (pending).
-- Visuals: design tokens, skeletons, dark mode, animations (optional).
-- Tests (pending).
-
 ## Scripts
 
 - `npm run dev`: Start local development
 - `npm run build`: Production build
 - `npm start`: Run built app
-
-## Notes
-
-- Use server components for fetching Contentful to keep tokens private.
-- Keep heading levels and landmark semantics (`main`, `section`) for accessibility.
+- `npm gen:graphql:sdk`: Generate the GraphQL SDK.
