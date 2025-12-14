@@ -6,6 +6,7 @@ import {
   GetAccordionCollectionQuery,
   GetAccordionTeaserCollectionQuery,
   getSdk,
+  GetSingleAccordionQuery,
   Sdk,
 } from '@/graphql/sdk/sdk';
 import { SafeGraphResponse, ContentfulGraphQLExtension } from '@/types';
@@ -27,6 +28,15 @@ export class ContentfulGraphQLClientImpl extends GraphQLClient {
     });
 
     this.sdk = getSdk(this);
+  }
+
+  public async getSingleAccordion(
+    id: string,
+  ): Promise<SafeGraphResponse<GetSingleAccordionQuery, unknown>> {
+    const safeResponse = await this.doQuery<'GetSingleAccordion'>(() =>
+      this.sdk.GetSingleAccordion({ id }),
+    );
+    return safeResponse;
   }
 
   public async getAccordionTeaserCollection(): Promise<

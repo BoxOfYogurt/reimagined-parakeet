@@ -16,7 +16,7 @@ export const AccordionBlock = ({
 }: AccordionBlock) => {
   const htmlId = toSafeHtmlId(title || internalName || sys.id);
   return (
-    <div className={className}>
+    <section aria-labelledby={htmlId} className={className}>
       <h2 id={htmlId} className="typography-heading-sm-bold text-heading my-5 scroll-mt-2">
         {title || internalName}
       </h2>
@@ -42,6 +42,6 @@ export const AccordionBlock = ({
           )}
         </DisclosureGroup>
       ) : null}
-    </div>
+    </section>
   );
 };

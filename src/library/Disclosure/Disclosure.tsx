@@ -79,11 +79,12 @@ export const Disclosure = ({
 type DisclosureTriggerProps = {
   children: React.ReactNode;
   className?: string;
+  level?: number;
 };
 
-export const DisclosureTrigger = ({ children, className }: DisclosureTriggerProps) => {
+export const DisclosureTrigger = ({ children, className, level = 3 }: DisclosureTriggerProps) => {
   return (
-    <RacHeading>
+    <RacHeading level={level}>
       <RacButton
         slot="trigger"
         className={cx(
