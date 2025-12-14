@@ -2,9 +2,9 @@ const config = {
   singleQuote: true,
   printWidth: 100,
   endOfLine: 'auto',
-  plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss'],
+  plugins: ['prettier-plugin-tailwindcss', '@trivago/prettier-plugin-sort-imports'],
   tailwindFunctions: ['cx'],
-  importOrder: ['^react', '<THIRD_PARTY_MODULES>', '^[./]'],
+  importOrder: ['^react', '^next', '<THIRD_PARTY_MODULES>', '^@/', '^[./]'],
 };
 
 export default config;

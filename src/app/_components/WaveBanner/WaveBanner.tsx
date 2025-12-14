@@ -1,4 +1,4 @@
-export const BottomDecoration = () => {
+export const WaveBanner = () => {
   return (
     /** NB! THIS SVG WAS CREATED BY AI! Prompt: "Create a cool bottom decoration with gradient colors" */
     <svg
