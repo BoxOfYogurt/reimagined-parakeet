@@ -1,20 +1,21 @@
-import { BottomDecoration } from '@/components';
-import { ApplicationLayout } from '@/library';
-import '@/styles/globals.css';
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import Link from 'next/link';
+import { BottomDecoration } from "@/components";
+import { ApplicationLayout } from "@/library";
+import "@/styles/globals.css";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import Link from "next/link";
 
 const DMSans = localFont({
-  src: './dm-sans-normal.woff2',
-  variable: '--font-dm-sans',
+  src: "./dm-sans-normal.woff2",
+  variable: "--font-dm-sans",
   preload: true,
-  fallback: ['Arial', 'sans-serif'],
+  fallback: ["Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
-  title: 'Novacare technical assignment',
-  description: 'The Novacare technical assignment project, built with Next.js and Contentful.',
+  title: "Novacare technical assignment",
+  description:
+    "The Novacare technical assignment project, built with Next.js and Contentful.",
 };
 
 export default function RootLayout({
@@ -32,7 +33,7 @@ export default function RootLayout({
                 Novacare
               </span>
               <Link href="/" className="before:absolute before:inset-0">
-                <span className="sr-only">Gå til forsiden</span>
+                <span className="sr-only">go to startpage</span>
               </Link>
             </div>
             <p className="typography-sm-regular text-subtle">Task Assignment</p>
