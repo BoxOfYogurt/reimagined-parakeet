@@ -9,9 +9,9 @@
   --text-heading-base--line-height: 3rem;
   --text-heading-base--letter-spacing: 0em;
 
-  /** TYPOGRAPHY - HEADING - SM - 40px */
-  --text-heading-sm: 2.5rem;
-  --text-heading-sm--line-height: 2.25rem;
+  /** TYPOGRAPHY - HEADING - SM - 32px */
+  --text-heading-sm: 2rem;
+  --text-heading-sm--line-height: 2.75rem;
   --text-heading-sm--letter-spacing: 0em;
 
   /** TYPOGRAPHY - SHORT - 2XL - 24px */
