@@ -1,21 +1,20 @@
-import { BottomDecoration } from "@/components";
-import { ApplicationLayout } from "@/library";
-import "@/styles/globals.css";
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import Link from "next/link";
+import { WaveBanner } from '@/app/_components';
+import { ApplicationLayout } from '@/library';
+import '@/styles/globals.css';
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import Link from 'next/link';
 
 const DMSans = localFont({
-  src: "./dm-sans-normal.woff2",
-  variable: "--font-dm-sans",
+  src: './_font/dm-sans-normal.woff2',
+  variable: '--font-dm-sans',
   preload: true,
-  fallback: ["Arial", "sans-serif"],
+  fallback: ['Arial', 'sans-serif'],
 });
 
 export const metadata: Metadata = {
-  title: "Novacare technical assignment",
-  description:
-    "The Novacare technical assignment project, built with Next.js and Contentful.",
+  title: 'Novacare technical assignment',
+  description: 'The Novacare technical assignment project, built with Next.js and Contentful.',
 };
 
 export default function RootLayout({
@@ -42,7 +41,7 @@ export default function RootLayout({
         <main className="min-h-content-height relative pb-20 sm:pb-24">
           {children}
           <div className="absolute inset-x-0 bottom-0">
-            <BottomDecoration />
+            <WaveBanner />
           </div>
         </main>
         <footer className="bg-surface-brand-sunken py-5">
