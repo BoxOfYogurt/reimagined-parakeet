@@ -1,1 +1,1 @@
-export { ContentfulGraphQLClientImpl } from "./contentfulGraphqlClient";
+export { ContentfulGraphQLClientImpl } from './contentfulGraphqlClient';

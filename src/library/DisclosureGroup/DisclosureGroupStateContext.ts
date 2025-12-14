@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { Key } from "react";
+import React, { Key } from 'react';
 
 export type DisclosureGroupState = {
   /** Whether multiple items can be expanded at the same time. */
@@ -13,6 +13,6 @@ export type DisclosureGroupState = {
   toggleKey(key: Key): void;
 };
 
-export const DisclosureGroupStateContext = React.createContext<
-  undefined | DisclosureGroupState
->(undefined);
+export const DisclosureGroupStateContext = React.createContext<undefined | DisclosureGroupState>(
+  undefined,
+);

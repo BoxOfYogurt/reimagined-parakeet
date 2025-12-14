@@ -1,2 +1,2 @@
-export * from "./AccordionBlock";
-export * from "./AccordionTeaserBlock";
+export * from './AccordionBlock';
+export * from './AccordionTeaserBlock';

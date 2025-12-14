@@ -1,1 +1,1 @@
-export * from "./BottomDecoration";
+export * from './BottomDecoration';

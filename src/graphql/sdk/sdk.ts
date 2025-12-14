@@ -1,40 +1,45 @@
+import { GraphQLError, print } from 'graphql';
 import type { GraphQLClient, RequestOptions } from 'graphql-request';
-import { GraphQLError, print } from 'graphql'
 import gql from 'graphql-tag';
+
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
-export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = {
+  [_ in K]?: never;
+};
+export type Incremental<T> =
+  | T
+  | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 type GraphQLClientRequestHeaders = RequestOptions['requestHeaders'];
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string; }
-  String: { input: string; output: string; }
-  Boolean: { input: boolean; output: boolean; }
-  Int: { input: number; output: number; }
-  Float: { input: number; output: number; }
-  DateTime: { input: any; output: any; }
-  Dimension: { input: any; output: any; }
-  HexColor: { input: any; output: any; }
-  JSON: { input: any; output: any; }
-  Quality: { input: any; output: any; }
+  ID: { input: string; output: string };
+  String: { input: string; output: string };
+  Boolean: { input: boolean; output: boolean };
+  Int: { input: number; output: number };
+  Float: { input: number; output: number };
+  DateTime: { input: any; output: any };
+  Dimension: { input: any; output: any };
+  HexColor: { input: any; output: any };
+  JSON: { input: any; output: any };
+  Quality: { input: any; output: any };
 };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordion) */
-export type Accordion = Entry & _Node & {
-  __typename?: 'Accordion';
-  _id: Scalars['ID']['output'];
-  accordionItemsCollection?: Maybe<AccordionAccordionItemsCollection>;
-  contentfulMetadata: ContentfulMetadata;
-  internalName?: Maybe<Scalars['String']['output']>;
-  linkedFrom?: Maybe<AccordionLinkingCollections>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
+export type Accordion = Entry &
+  _Node & {
+    __typename?: 'Accordion';
+    _id: Scalars['ID']['output'];
+    accordionItemsCollection?: Maybe<AccordionAccordionItemsCollection>;
+    contentfulMetadata: ContentfulMetadata;
+    internalName?: Maybe<Scalars['String']['output']>;
+    linkedFrom?: Maybe<AccordionLinkingCollections>;
+    sys: Sys;
+    title?: Maybe<Scalars['String']['output']>;
+  };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordion) */
 export type AccordionAccordionItemsCollectionArgs = {
@@ -47,19 +52,16 @@ export type AccordionAccordionItemsCollectionArgs = {
   where?: InputMaybe<AccordionItemFilter>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordion) */
 export type AccordionInternalNameArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordion) */
 export type AccordionLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordion) */
 export type AccordionTitleArgs = {
@@ -121,17 +123,17 @@ export type AccordionFilter = {
 };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordionItem) */
-export type AccordionItem = Entry & _Node & {
-  __typename?: 'AccordionItem';
-  _id: Scalars['ID']['output'];
-  contentfulMetadata: ContentfulMetadata;
-  internalName?: Maybe<Scalars['String']['output']>;
-  linkedFrom?: Maybe<AccordionItemLinkingCollections>;
-  name?: Maybe<Scalars['String']['output']>;
-  sys: Sys;
-  text?: Maybe<Scalars['String']['output']>;
-};
-
+export type AccordionItem = Entry &
+  _Node & {
+    __typename?: 'AccordionItem';
+    _id: Scalars['ID']['output'];
+    contentfulMetadata: ContentfulMetadata;
+    internalName?: Maybe<Scalars['String']['output']>;
+    linkedFrom?: Maybe<AccordionItemLinkingCollections>;
+    name?: Maybe<Scalars['String']['output']>;
+    sys: Sys;
+    text?: Maybe<Scalars['String']['output']>;
+  };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordionItem) */
 export type AccordionItemInternalNameArgs = {
@@ -139,19 +141,16 @@ export type AccordionItemInternalNameArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordionItem) */
 export type AccordionItemLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordionItem) */
 export type AccordionItemNameArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/accordionItem) */
 export type AccordionItemTextArgs = {
@@ -201,7 +200,6 @@ export type AccordionItemLinkingCollections = {
   entryCollection?: Maybe<EntryCollection>;
 };
 
-
 export type AccordionItemLinkingCollectionsAccordionCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -210,7 +208,6 @@ export type AccordionItemLinkingCollectionsAccordionCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type AccordionItemLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -253,7 +250,6 @@ export type AccordionLinkingCollections = {
   entryCollection?: Maybe<EntryCollection>;
 };
 
-
 export type AccordionLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -292,13 +288,11 @@ export type Asset = {
   width?: Maybe<Scalars['Int']['output']>;
 };
 
-
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetContentTypeArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetDescriptionArgs = {
@@ -306,13 +300,11 @@ export type AssetDescriptionArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetFileNameArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetHeightArgs = {
@@ -320,12 +312,10 @@ export type AssetHeightArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetSizeArgs = {
@@ -333,13 +323,11 @@ export type AssetSizeArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetUrlArgs = {
@@ -347,7 +335,6 @@ export type AssetUrlArgs = {
   transform?: InputMaybe<ImageTransformOptions>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetWidthArgs = {
@@ -441,7 +428,6 @@ export type AssetLinkingCollections = {
   postCollection?: Maybe<PostCollection>;
 };
 
-
 export type AssetLinkingCollectionsAuthorCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -449,7 +435,6 @@ export type AssetLinkingCollectionsAuthorCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type AssetLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -459,7 +444,6 @@ export type AssetLinkingCollectionsEntryCollectionArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 export type AssetLinkingCollectionsImageWithAiTagsCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -468,7 +452,6 @@ export type AssetLinkingCollectionsImageWithAiTagsCollectionArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 export type AssetLinkingCollectionsImageWithAltTextCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -476,7 +459,6 @@ export type AssetLinkingCollectionsImageWithAltTextCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type AssetLinkingCollectionsPostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -509,29 +491,27 @@ export type AssetOrder =
   | 'width_DESC';
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/author) */
-export type Author = Entry & _Node & {
-  __typename?: 'Author';
-  _id: Scalars['ID']['output'];
-  contentfulMetadata: ContentfulMetadata;
-  linkedFrom?: Maybe<AuthorLinkingCollections>;
-  name?: Maybe<Scalars['String']['output']>;
-  picture?: Maybe<Asset>;
-  sys: Sys;
-};
-
+export type Author = Entry &
+  _Node & {
+    __typename?: 'Author';
+    _id: Scalars['ID']['output'];
+    contentfulMetadata: ContentfulMetadata;
+    linkedFrom?: Maybe<AuthorLinkingCollections>;
+    name?: Maybe<Scalars['String']['output']>;
+    picture?: Maybe<Asset>;
+    sys: Sys;
+  };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/author) */
 export type AuthorLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/author) */
 export type AuthorNameArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/author) */
 export type AuthorPictureArgs = {
@@ -569,7 +549,6 @@ export type AuthorLinkingCollections = {
   postCollection?: Maybe<PostCollection>;
 };
 
-
 export type AuthorLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -577,7 +556,6 @@ export type AuthorLinkingCollectionsEntryCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type AuthorLinkingCollectionsPostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -621,18 +599,18 @@ export type AuthorOrder =
   | 'sys_publishedVersion_DESC';
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/blogpost) */
-export type Blogpost = Entry & _Node & {
-  __typename?: 'Blogpost';
-  _id: Scalars['ID']['output'];
-  content?: Maybe<BlogpostContent>;
-  contentfulMetadata: ContentfulMetadata;
-  excerpt?: Maybe<Scalars['String']['output']>;
-  imageWithAltText?: Maybe<ImageWithAltText>;
-  linkedFrom?: Maybe<BlogpostLinkingCollections>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
+export type Blogpost = Entry &
+  _Node & {
+    __typename?: 'Blogpost';
+    _id: Scalars['ID']['output'];
+    content?: Maybe<BlogpostContent>;
+    contentfulMetadata: ContentfulMetadata;
+    excerpt?: Maybe<Scalars['String']['output']>;
+    imageWithAltText?: Maybe<ImageWithAltText>;
+    linkedFrom?: Maybe<BlogpostLinkingCollections>;
+    sys: Sys;
+    title?: Maybe<Scalars['String']['output']>;
+  };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/blogpost) */
 export type BlogpostContentArgs = {
@@ -640,13 +618,11 @@ export type BlogpostContentArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/blogpost) */
 export type BlogpostExcerptArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/blogpost) */
 export type BlogpostImageWithAltTextArgs = {
@@ -656,12 +632,10 @@ export type BlogpostImageWithAltTextArgs = {
   where?: InputMaybe<ImageWithAltTextFilter>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/blogpost) */
 export type BlogpostLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/blogpost) */
 export type BlogpostTitleArgs = {
@@ -756,7 +730,6 @@ export type BlogpostLinkingCollections = {
   entryCollection?: Maybe<EntryCollection>;
 };
 
-
 export type BlogpostLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -822,21 +795,21 @@ export type ContentfulTag = {
 };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/demo) */
-export type Demo = Entry & _Node & {
-  __typename?: 'Demo';
-  _id: Scalars['ID']['output'];
-  componentSettings?: Maybe<Scalars['JSON']['output']>;
-  componentTree?: Maybe<Scalars['JSON']['output']>;
-  contentfulMetadata: ContentfulMetadata;
-  dataSource?: Maybe<Scalars['JSON']['output']>;
-  linkedFrom?: Maybe<DemoLinkingCollections>;
-  slug?: Maybe<Scalars['String']['output']>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-  unboundValues?: Maybe<Scalars['JSON']['output']>;
-  usedComponentsCollection?: Maybe<DemoUsedComponentsCollection>;
-};
-
+export type Demo = Entry &
+  _Node & {
+    __typename?: 'Demo';
+    _id: Scalars['ID']['output'];
+    componentSettings?: Maybe<Scalars['JSON']['output']>;
+    componentTree?: Maybe<Scalars['JSON']['output']>;
+    contentfulMetadata: ContentfulMetadata;
+    dataSource?: Maybe<Scalars['JSON']['output']>;
+    linkedFrom?: Maybe<DemoLinkingCollections>;
+    slug?: Maybe<Scalars['String']['output']>;
+    sys: Sys;
+    title?: Maybe<Scalars['String']['output']>;
+    unboundValues?: Maybe<Scalars['JSON']['output']>;
+    usedComponentsCollection?: Maybe<DemoUsedComponentsCollection>;
+  };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/demo) */
 export type DemoComponentSettingsArgs = {
@@ -844,13 +817,11 @@ export type DemoComponentSettingsArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/demo) */
 export type DemoComponentTreeArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/demo) */
 export type DemoDataSourceArgs = {
@@ -858,12 +829,10 @@ export type DemoDataSourceArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/demo) */
 export type DemoLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/demo) */
 export type DemoSlugArgs = {
@@ -871,20 +840,17 @@ export type DemoSlugArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/demo) */
 export type DemoTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/demo) */
 export type DemoUnboundValuesArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/demo) */
 export type DemoUsedComponentsCollectionArgs = {
@@ -938,7 +904,6 @@ export type DemoLinkingCollections = {
   entryCollection?: Maybe<EntryCollection>;
 };
 
-
 export type DemoLinkingCollectionsDemoCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -947,7 +912,6 @@ export type DemoLinkingCollectionsDemoCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type DemoLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1131,17 +1095,17 @@ export type ImageTransformOptions = {
 };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAiTags) */
-export type ImageWithAiTags = Entry & _Node & {
-  __typename?: 'ImageWithAiTags';
-  _id: Scalars['ID']['output'];
-  contentfulMetadata: ContentfulMetadata;
-  image?: Maybe<Asset>;
-  imageTags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  linkedFrom?: Maybe<ImageWithAiTagsLinkingCollections>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
+export type ImageWithAiTags = Entry &
+  _Node & {
+    __typename?: 'ImageWithAiTags';
+    _id: Scalars['ID']['output'];
+    contentfulMetadata: ContentfulMetadata;
+    image?: Maybe<Asset>;
+    imageTags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+    linkedFrom?: Maybe<ImageWithAiTagsLinkingCollections>;
+    sys: Sys;
+    title?: Maybe<Scalars['String']['output']>;
+  };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAiTags) */
 export type ImageWithAiTagsImageArgs = {
@@ -1150,19 +1114,16 @@ export type ImageWithAiTagsImageArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAiTags) */
 export type ImageWithAiTagsImageTagsArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAiTags) */
 export type ImageWithAiTagsLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAiTags) */
 export type ImageWithAiTagsTitleArgs = {
@@ -1203,7 +1164,6 @@ export type ImageWithAiTagsLinkingCollections = {
   postCollection?: Maybe<PostCollection>;
 };
 
-
 export type ImageWithAiTagsLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -1211,7 +1171,6 @@ export type ImageWithAiTagsLinkingCollectionsEntryCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type ImageWithAiTagsLinkingCollectionsPostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1255,26 +1214,25 @@ export type ImageWithAiTagsOrder =
   | 'title_DESC';
 
 /** An image with alt text [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAltText) */
-export type ImageWithAltText = Entry & _Node & {
-  __typename?: 'ImageWithAltText';
-  _id: Scalars['ID']['output'];
-  altText?: Maybe<Scalars['String']['output']>;
-  contentfulMetadata: ContentfulMetadata;
-  image?: Maybe<Asset>;
-  imageTags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  linkedFrom?: Maybe<ImageWithAltTextLinkingCollections>;
-  seoKeywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
+export type ImageWithAltText = Entry &
+  _Node & {
+    __typename?: 'ImageWithAltText';
+    _id: Scalars['ID']['output'];
+    altText?: Maybe<Scalars['String']['output']>;
+    contentfulMetadata: ContentfulMetadata;
+    image?: Maybe<Asset>;
+    imageTags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+    linkedFrom?: Maybe<ImageWithAltTextLinkingCollections>;
+    seoKeywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+    sys: Sys;
+    title?: Maybe<Scalars['String']['output']>;
+  };
 
 /** An image with alt text [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAltText) */
 export type ImageWithAltTextAltTextArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** An image with alt text [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAltText) */
 export type ImageWithAltTextImageArgs = {
@@ -1283,26 +1241,22 @@ export type ImageWithAltTextImageArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** An image with alt text [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAltText) */
 export type ImageWithAltTextImageTagsArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** An image with alt text [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAltText) */
 export type ImageWithAltTextLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** An image with alt text [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAltText) */
 export type ImageWithAltTextSeoKeywordsArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** An image with alt text [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/imageWithAltText) */
 export type ImageWithAltTextTitleArgs = {
@@ -1355,7 +1309,6 @@ export type ImageWithAltTextLinkingCollections = {
   postCollection?: Maybe<PostCollection>;
 };
 
-
 export type ImageWithAltTextLinkingCollectionsBlogpostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -1365,7 +1318,6 @@ export type ImageWithAltTextLinkingCollectionsBlogpostCollectionArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 export type ImageWithAltTextLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -1373,7 +1325,6 @@ export type ImageWithAltTextLinkingCollectionsEntryCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type ImageWithAltTextLinkingCollectionsPostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1433,31 +1384,30 @@ export type ImageWithAltTextOrder =
   | 'title_DESC';
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
-export type Post = Entry & _Node & {
-  __typename?: 'Post';
-  _id: Scalars['ID']['output'];
-  altText?: Maybe<Scalars['String']['output']>;
-  author?: Maybe<Author>;
-  content?: Maybe<PostContent>;
-  contentfulMetadata: ContentfulMetadata;
-  coverImage?: Maybe<Asset>;
-  date?: Maybe<Scalars['DateTime']['output']>;
-  excerpt?: Maybe<Scalars['String']['output']>;
-  imageWithAiTags?: Maybe<ImageWithAiTags>;
-  imageWithAltText?: Maybe<ImageWithAltText>;
-  linkedFrom?: Maybe<PostLinkingCollections>;
-  slug?: Maybe<Scalars['String']['output']>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
+export type Post = Entry &
+  _Node & {
+    __typename?: 'Post';
+    _id: Scalars['ID']['output'];
+    altText?: Maybe<Scalars['String']['output']>;
+    author?: Maybe<Author>;
+    content?: Maybe<PostContent>;
+    contentfulMetadata: ContentfulMetadata;
+    coverImage?: Maybe<Asset>;
+    date?: Maybe<Scalars['DateTime']['output']>;
+    excerpt?: Maybe<Scalars['String']['output']>;
+    imageWithAiTags?: Maybe<ImageWithAiTags>;
+    imageWithAltText?: Maybe<ImageWithAltText>;
+    linkedFrom?: Maybe<PostLinkingCollections>;
+    slug?: Maybe<Scalars['String']['output']>;
+    sys: Sys;
+    title?: Maybe<Scalars['String']['output']>;
+  };
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostAltTextArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostAuthorArgs = {
@@ -1467,13 +1417,11 @@ export type PostAuthorArgs = {
   where?: InputMaybe<AuthorFilter>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostContentArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostCoverImageArgs = {
@@ -1482,20 +1430,17 @@ export type PostCoverImageArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostDateArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostExcerptArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostImageWithAiTagsArgs = {
@@ -1505,7 +1450,6 @@ export type PostImageWithAiTagsArgs = {
   where?: InputMaybe<ImageWithAiTagsFilter>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostImageWithAltTextArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -1514,19 +1458,16 @@ export type PostImageWithAltTextArgs = {
   where?: InputMaybe<ImageWithAltTextFilter>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostSlugArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/q0fnx0gj00da/content_types/post) */
 export type PostTitleArgs = {
@@ -1649,7 +1590,6 @@ export type PostLinkingCollections = {
   entryCollection?: Maybe<EntryCollection>;
 };
 
-
 export type PostLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -1703,14 +1643,12 @@ export type Query = {
   postCollection?: Maybe<PostCollection>;
 };
 
-
 export type Query_NodeArgs = {
   id: Scalars['ID']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type Query_NodesArgs = {
   ids: Array<Scalars['ID']['input']>;
@@ -1719,14 +1657,12 @@ export type Query_NodesArgs = {
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 export type QueryAccordionArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryAccordionCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1738,14 +1674,12 @@ export type QueryAccordionCollectionArgs = {
   where?: InputMaybe<AccordionFilter>;
 };
 
-
 export type QueryAccordionItemArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryAccordionItemCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1757,14 +1691,12 @@ export type QueryAccordionItemCollectionArgs = {
   where?: InputMaybe<AccordionItemFilter>;
 };
 
-
 export type QueryAssetArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryAssetCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1776,14 +1708,12 @@ export type QueryAssetCollectionArgs = {
   where?: InputMaybe<AssetFilter>;
 };
 
-
 export type QueryAuthorArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryAuthorCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1795,14 +1725,12 @@ export type QueryAuthorCollectionArgs = {
   where?: InputMaybe<AuthorFilter>;
 };
 
-
 export type QueryBlogpostArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryBlogpostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1814,14 +1742,12 @@ export type QueryBlogpostCollectionArgs = {
   where?: InputMaybe<BlogpostFilter>;
 };
 
-
 export type QueryDemoArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryDemoCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1833,7 +1759,6 @@ export type QueryDemoCollectionArgs = {
   where?: InputMaybe<DemoFilter>;
 };
 
-
 export type QueryEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -1844,14 +1769,12 @@ export type QueryEntryCollectionArgs = {
   where?: InputMaybe<EntryFilter>;
 };
 
-
 export type QueryImageWithAiTagsArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryImageWithAiTagsCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1863,14 +1786,12 @@ export type QueryImageWithAiTagsCollectionArgs = {
   where?: InputMaybe<ImageWithAiTagsFilter>;
 };
 
-
 export type QueryImageWithAltTextArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryImageWithAltTextCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1882,14 +1803,12 @@ export type QueryImageWithAltTextCollectionArgs = {
   where?: InputMaybe<ImageWithAltTextFilter>;
 };
 
-
 export type QueryPostArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryPostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -2099,115 +2018,260 @@ export type CfImageWithAltTextNestedFilter = {
 };
 
 export const AccordionItemFragmentDoc = gql`
-    fragment AccordionItem on AccordionItem {
-  sys {
-    id
+  fragment AccordionItem on AccordionItem {
+    sys {
+      id
+    }
+    internalName
+    name
+    text
   }
-  internalName
-  name
-  text
-}
-    `;
+`;
 export const AccordionItemsCollectionFragmentDoc = gql`
-    fragment AccordionItemsCollection on AccordionAccordionItemsCollection {
-  total
-  items {
-    ...AccordionItem
-  }
-}
-    `;
-export const AccordionBlockFragmentDoc = gql`
-    fragment AccordionBlock on Accordion {
-  sys {
-    id
-  }
-  internalName
-  title
-  accordionItemsCollection {
-    ...AccordionItemsCollection
-  }
-}
-    `;
-export const AccordionTeaserBlockFragmentDoc = gql`
-    fragment AccordionTeaserBlock on Accordion {
-  sys {
-    id
-  }
-  title
-}
-    `;
-export const GetAccordionCollectionDocument = gql`
-    query GetAccordionCollection {
-  accordionCollection {
+  fragment AccordionItemsCollection on AccordionAccordionItemsCollection {
+    total
     items {
+      ...AccordionItem
+    }
+  }
+`;
+export const AccordionBlockFragmentDoc = gql`
+  fragment AccordionBlock on Accordion {
+    sys {
+      id
+    }
+    internalName
+    title
+    accordionItemsCollection {
+      ...AccordionItemsCollection
+    }
+  }
+`;
+export const AccordionTeaserBlockFragmentDoc = gql`
+  fragment AccordionTeaserBlock on Accordion {
+    sys {
+      id
+    }
+    title
+  }
+`;
+export const GetAccordionCollectionDocument = gql`
+  query GetAccordionCollection {
+    accordionCollection {
+      items {
+        ...AccordionBlock
+      }
+    }
+  }
+  ${AccordionBlockFragmentDoc}
+  ${AccordionItemsCollectionFragmentDoc}
+  ${AccordionItemFragmentDoc}
+`;
+export const GetAccordionTeaserCollectionDocument = gql`
+  query GetAccordionTeaserCollection {
+    accordionCollection {
+      items {
+        ...AccordionTeaserBlock
+      }
+    }
+  }
+  ${AccordionTeaserBlockFragmentDoc}
+`;
+export const GetSingleAccordionDocument = gql`
+  query GetSingleAccordion($id: String!) {
+    accordion(id: $id) {
       ...AccordionBlock
     }
   }
-}
-    ${AccordionBlockFragmentDoc}
-${AccordionItemsCollectionFragmentDoc}
-${AccordionItemFragmentDoc}`;
-export const GetAccordionTeaserCollectionDocument = gql`
-    query GetAccordionTeaserCollection {
-  accordionCollection {
-    items {
-      ...AccordionTeaserBlock
-    }
-  }
-}
-    ${AccordionTeaserBlockFragmentDoc}`;
-export const GetSingleAccordionDocument = gql`
-    query GetSingleAccordion($id: String!) {
-  accordion(id: $id) {
-    ...AccordionBlock
-  }
-}
-    ${AccordionBlockFragmentDoc}
-${AccordionItemsCollectionFragmentDoc}
-${AccordionItemFragmentDoc}`;
+  ${AccordionBlockFragmentDoc}
+  ${AccordionItemsCollectionFragmentDoc}
+  ${AccordionItemFragmentDoc}
+`;
 
-export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string, variables?: any) => Promise<T>;
+export type SdkFunctionWrapper = <T>(
+  action: (requestHeaders?: Record<string, string>) => Promise<T>,
+  operationName: string,
+  operationType?: string,
+  variables?: any,
+) => Promise<T>;
 
-
-const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType, _variables) => action();
+const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType, _variables) =>
+  action();
 const GetAccordionCollectionDocumentString = print(GetAccordionCollectionDocument);
 const GetAccordionTeaserCollectionDocumentString = print(GetAccordionTeaserCollectionDocument);
 const GetSingleAccordionDocumentString = print(GetSingleAccordionDocument);
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    GetAccordionCollection(variables?: GetAccordionCollectionQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<{ data: GetAccordionCollectionQuery; errors?: GraphQLError[]; extensions?: unknown; headers: Headers; status: number; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetAccordionCollectionQuery>(GetAccordionCollectionDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetAccordionCollection', 'query', variables);
+    GetAccordionCollection(
+      variables?: GetAccordionCollectionQueryVariables,
+      requestHeaders?: GraphQLClientRequestHeaders,
+    ): Promise<{
+      data: GetAccordionCollectionQuery;
+      errors?: GraphQLError[];
+      extensions?: unknown;
+      headers: Headers;
+      status: number;
+    }> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.rawRequest<GetAccordionCollectionQuery>(
+            GetAccordionCollectionDocumentString,
+            variables,
+            { ...requestHeaders, ...wrappedRequestHeaders },
+          ),
+        'GetAccordionCollection',
+        'query',
+        variables,
+      );
     },
-    GetAccordionTeaserCollection(variables?: GetAccordionTeaserCollectionQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<{ data: GetAccordionTeaserCollectionQuery; errors?: GraphQLError[]; extensions?: unknown; headers: Headers; status: number; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetAccordionTeaserCollectionQuery>(GetAccordionTeaserCollectionDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetAccordionTeaserCollection', 'query', variables);
+    GetAccordionTeaserCollection(
+      variables?: GetAccordionTeaserCollectionQueryVariables,
+      requestHeaders?: GraphQLClientRequestHeaders,
+    ): Promise<{
+      data: GetAccordionTeaserCollectionQuery;
+      errors?: GraphQLError[];
+      extensions?: unknown;
+      headers: Headers;
+      status: number;
+    }> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.rawRequest<GetAccordionTeaserCollectionQuery>(
+            GetAccordionTeaserCollectionDocumentString,
+            variables,
+            { ...requestHeaders, ...wrappedRequestHeaders },
+          ),
+        'GetAccordionTeaserCollection',
+        'query',
+        variables,
+      );
     },
-    GetSingleAccordion(variables: GetSingleAccordionQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<{ data: GetSingleAccordionQuery; errors?: GraphQLError[]; extensions?: unknown; headers: Headers; status: number; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetSingleAccordionQuery>(GetSingleAccordionDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetSingleAccordion', 'query', variables);
-    }
+    GetSingleAccordion(
+      variables: GetSingleAccordionQueryVariables,
+      requestHeaders?: GraphQLClientRequestHeaders,
+    ): Promise<{
+      data: GetSingleAccordionQuery;
+      errors?: GraphQLError[];
+      extensions?: unknown;
+      headers: Headers;
+      status: number;
+    }> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.rawRequest<GetSingleAccordionQuery>(GetSingleAccordionDocumentString, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        'GetSingleAccordion',
+        'query',
+        variables,
+      );
+    },
   };
 }
 export type Sdk = ReturnType<typeof getSdk>;
-export type AccordionBlockFragment = { __typename?: 'Accordion', internalName?: string | null, title?: string | null, sys: { __typename?: 'Sys', id: string }, accordionItemsCollection?: { __typename?: 'AccordionAccordionItemsCollection', total: number, items: Array<{ __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null };
+export type AccordionBlockFragment = {
+  __typename?: 'Accordion';
+  internalName?: string | null;
+  title?: string | null;
+  sys: { __typename?: 'Sys'; id: string };
+  accordionItemsCollection?: {
+    __typename?: 'AccordionAccordionItemsCollection';
+    total: number;
+    items: Array<{
+      __typename?: 'AccordionItem';
+      internalName?: string | null;
+      name?: string | null;
+      text?: string | null;
+      sys: { __typename?: 'Sys'; id: string };
+    } | null>;
+  } | null;
+};
 
-export type AccordionTeaserBlockFragment = { __typename?: 'Accordion', title?: string | null, sys: { __typename?: 'Sys', id: string } };
+export type AccordionTeaserBlockFragment = {
+  __typename?: 'Accordion';
+  title?: string | null;
+  sys: { __typename?: 'Sys'; id: string };
+};
 
-export type AccordionItemFragment = { __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } };
+export type AccordionItemFragment = {
+  __typename?: 'AccordionItem';
+  internalName?: string | null;
+  name?: string | null;
+  text?: string | null;
+  sys: { __typename?: 'Sys'; id: string };
+};
 
-export type AccordionItemsCollectionFragment = { __typename?: 'AccordionAccordionItemsCollection', total: number, items: Array<{ __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } } | null> };
+export type AccordionItemsCollectionFragment = {
+  __typename?: 'AccordionAccordionItemsCollection';
+  total: number;
+  items: Array<{
+    __typename?: 'AccordionItem';
+    internalName?: string | null;
+    name?: string | null;
+    text?: string | null;
+    sys: { __typename?: 'Sys'; id: string };
+  } | null>;
+};
 
-export type GetAccordionCollectionQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetAccordionCollectionQueryVariables = Exact<{ [key: string]: never }>;
 
+export type GetAccordionCollectionQuery = {
+  accordionCollection?: {
+    __typename?: 'AccordionCollection';
+    items: Array<{
+      __typename?: 'Accordion';
+      internalName?: string | null;
+      title?: string | null;
+      sys: { __typename?: 'Sys'; id: string };
+      accordionItemsCollection?: {
+        __typename?: 'AccordionAccordionItemsCollection';
+        total: number;
+        items: Array<{
+          __typename?: 'AccordionItem';
+          internalName?: string | null;
+          name?: string | null;
+          text?: string | null;
+          sys: { __typename?: 'Sys'; id: string };
+        } | null>;
+      } | null;
+    } | null>;
+  } | null;
+};
 
-export type GetAccordionCollectionQuery = { accordionCollection?: { __typename?: 'AccordionCollection', items: Array<{ __typename?: 'Accordion', internalName?: string | null, title?: string | null, sys: { __typename?: 'Sys', id: string }, accordionItemsCollection?: { __typename?: 'AccordionAccordionItemsCollection', total: number, items: Array<{ __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null };
+export type GetAccordionTeaserCollectionQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetAccordionTeaserCollectionQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetAccordionTeaserCollectionQuery = { accordionCollection?: { __typename?: 'AccordionCollection', items: Array<{ __typename?: 'Accordion', title?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null };
+export type GetAccordionTeaserCollectionQuery = {
+  accordionCollection?: {
+    __typename?: 'AccordionCollection';
+    items: Array<{
+      __typename?: 'Accordion';
+      title?: string | null;
+      sys: { __typename?: 'Sys'; id: string };
+    } | null>;
+  } | null;
+};
 
 export type GetSingleAccordionQueryVariables = Exact<{
   id: Scalars['String']['input'];
 }>;
 
-
-export type GetSingleAccordionQuery = { accordion?: { __typename?: 'Accordion', internalName?: string | null, title?: string | null, sys: { __typename?: 'Sys', id: string }, accordionItemsCollection?: { __typename?: 'AccordionAccordionItemsCollection', total: number, items: Array<{ __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null } | null };
+export type GetSingleAccordionQuery = {
+  accordion?: {
+    __typename?: 'Accordion';
+    internalName?: string | null;
+    title?: string | null;
+    sys: { __typename?: 'Sys'; id: string };
+    accordionItemsCollection?: {
+      __typename?: 'AccordionAccordionItemsCollection';
+      total: number;
+      items: Array<{
+        __typename?: 'AccordionItem';
+        internalName?: string | null;
+        name?: string | null;
+        text?: string | null;
+        sys: { __typename?: 'Sys'; id: string };
+      } | null>;
+    } | null;
+  } | null;
+};

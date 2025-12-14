@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import React, { useContext } from "react";
-import { DisclosureGroupStateContext } from "../DisclosureGroup";
+import React, { useContext } from 'react';
 import {
   Key,
   Disclosure as RacDisclosure,
   Heading as RacHeading,
   Button as RacButton,
   DisclosurePanel as RacDisclosurePanel,
-} from "react-aria-components";
-import { cx } from "classix";
+} from 'react-aria-components';
+import { cx } from 'classix';
+import { DisclosureGroupStateContext } from '../DisclosureGroup';
 
 export type DisclosureProps = {
   id: Key;
@@ -47,14 +47,12 @@ export const Disclosure = ({
   const isExpanded = isGroupControlled
     ? new Set(groupState.expandedKeys).has(id)
     : isPropControlled
-    ? expanded
-    : undefined;
+      ? expanded
+      : undefined;
 
   /** the isDisabled state can be set by either the group or the prop */
   const isDisabled =
-    groupState?.isDisabled !== undefined
-      ? groupState.isDisabled
-      : isDisabledFromProps;
+    groupState?.isDisabled !== undefined ? groupState.isDisabled : isDisabledFromProps;
 
   const handleExpandedChange = (isExpanded: boolean) => {
     if (isGroupControlled) {
@@ -71,7 +69,7 @@ export const Disclosure = ({
       isExpanded={isExpanded}
       isDisabled={isDisabled}
       onExpandedChange={handleExpandedChange}
-      className={cx("group/disclosure-root", className)}
+      className={cx('group/disclosure-root', className)}
     >
       {children}
     </RacDisclosure>
@@ -83,17 +81,14 @@ type DisclosureTriggerProps = {
   className?: string;
 };
 
-export const DisclosureTrigger = ({
-  children,
-  className,
-}: DisclosureTriggerProps) => {
+export const DisclosureTrigger = ({ children, className }: DisclosureTriggerProps) => {
   return (
     <RacHeading>
       <RacButton
         slot="trigger"
         className={cx(
-          "cursor-pointer group-data-[disabled=true]/disclosure-root:cursor-default",
-          className
+          'cursor-pointer group-data-[disabled=true]/disclosure-root:cursor-default',
+          className,
         )}
       >
         {children}
@@ -116,9 +111,8 @@ export const DisclosurePanel = ({
   return (
     <RacDisclosurePanel
       className={cx(
-        !disableDefaultAnimation &&
-          "transition-all h-(--disclosure-panel-height) overflow-clip",
-        className
+        !disableDefaultAnimation && 'h-(--disclosure-panel-height) overflow-clip transition-all',
+        className,
       )}
     >
       {children}

@@ -5,7 +5,7 @@ export const BottomDecoration = () => {
       width="100%"
       viewBox="0 0 1440 80"
       preserveAspectRatio="none"
-      className="w-full h-full"
+      className="h-full w-full"
       aria-hidden="true"
     >
       <defs>

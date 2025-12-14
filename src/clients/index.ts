@@ -1,1 +1,1 @@
-export * from "./contentfulGraphqlClient";
+export * from './contentfulGraphqlClient';

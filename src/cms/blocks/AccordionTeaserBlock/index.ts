@@ -1,2 +1,2 @@
-export { AccordionTeaserBlock } from "./AccordionTeaserBlock";
-export { AccordionTeaserBlockSkeleton } from "./AccordionTeaserBlockSkeleton";
+export { AccordionTeaserBlock } from './AccordionTeaserBlock';
+export { AccordionTeaserBlockSkeleton } from './AccordionTeaserBlockSkeleton';

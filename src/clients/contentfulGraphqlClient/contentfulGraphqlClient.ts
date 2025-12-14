@@ -1,26 +1,26 @@
 import {
   ContentfulGraphQLExtensionCode,
   ContentfulGraphQLExtensionCodeType,
-} from "@/constants/ContentfulGraphQLExtensionCode";
+} from '@/constants/ContentfulGraphQLExtensionCode';
 import {
   GetAccordionCollectionQuery,
   GetAccordionTeaserCollectionQuery,
   getSdk,
   Sdk,
-} from "@/graphql/sdk/sdk";
-import { SafeGraphResponse, ContentfulGraphQLExtension } from "@/types";
-import { GraphQLClient, GraphQLResponse } from "graphql-request";
+} from '@/graphql/sdk/sdk';
+import { SafeGraphResponse, ContentfulGraphQLExtension } from '@/types';
+import { GraphQLClient, GraphQLResponse } from 'graphql-request';
 
 export class ContentfulGraphQLClientImpl extends GraphQLClient {
   private sdk: ReturnType<typeof getSdk>;
   public constructor() {
     const serviceUrl = new URL(
-      `${process.env.CONTENTFUL_GRAPHQL_BASE_URL}/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`
+      `${process.env.CONTENTFUL_GRAPHQL_BASE_URL}/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`,
     );
 
     super(serviceUrl.href, {
-      errorPolicy: "all",
-      method: "POST",
+      errorPolicy: 'all',
+      method: 'POST',
       headers: {
         Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
@@ -32,8 +32,8 @@ export class ContentfulGraphQLClientImpl extends GraphQLClient {
   public async getAccordionTeaserCollection(): Promise<
     SafeGraphResponse<GetAccordionTeaserCollectionQuery, unknown>
   > {
-    const safeResponse = await this.doQuery<"GetAccordionTeaserCollection">(
-      this.sdk.GetAccordionTeaserCollection
+    const safeResponse = await this.doQuery<'GetAccordionTeaserCollection'>(
+      this.sdk.GetAccordionTeaserCollection,
     );
     return safeResponse;
   }
@@ -41,22 +41,19 @@ export class ContentfulGraphQLClientImpl extends GraphQLClient {
   public async getAccordionCollection(): Promise<
     SafeGraphResponse<GetAccordionCollectionQuery, unknown>
   > {
-    const safeResponse = await this.doQuery<"GetAccordionCollection">(
-      this.sdk.GetAccordionCollection
+    const safeResponse = await this.doQuery<'GetAccordionCollection'>(
+      this.sdk.GetAccordionCollection,
     );
     return safeResponse;
   }
 
   private async doQuery<TOperation extends keyof Sdk>(
-    request: () => ReturnType<Sdk[TOperation]>
-  ): Promise<
-    SafeGraphResponse<Awaited<ReturnType<Sdk[TOperation]>>["data"], unknown>
-  > {
+    request: () => ReturnType<Sdk[TOperation]>,
+  ): Promise<SafeGraphResponse<Awaited<ReturnType<Sdk[TOperation]>>['data'], unknown>> {
     try {
       const response = await request();
 
-      const isAttachedExtensions =
-        this.isResponseWithContentfulExtension(response);
+      const isAttachedExtensions = this.isResponseWithContentfulExtension(response);
 
       if (isAttachedExtensions) {
         /**
@@ -75,12 +72,12 @@ export class ContentfulGraphQLClientImpl extends GraphQLClient {
         */
 
         console.warn(
-          `Contentful GraphQL Extension returned an error with code: ${response.extensions.contentful.code}`
+          `Contentful GraphQL Extension returned an error with code: ${response.extensions.contentful.code}`,
         );
 
         if (this.shouldReturnPartialSuccess(response.extensions.contentful)) {
           return {
-            success: "partially",
+            success: 'partially',
             data: response.data,
             errors: response.errors || [],
           };
@@ -92,10 +89,7 @@ export class ContentfulGraphQLClientImpl extends GraphQLClient {
         data: response.data,
       };
     } catch (error) {
-      console.error(
-        "Something went wrong while fetching from Contentful GraphQL API",
-        error
-      );
+      console.error('Something went wrong while fetching from Contentful GraphQL API', error);
 
       return {
         success: false,
@@ -105,36 +99,26 @@ export class ContentfulGraphQLClientImpl extends GraphQLClient {
   }
 
   private isResponseWithContentfulExtension<TOperation extends keyof Sdk>(
-    response: GraphQLResponse<Awaited<ReturnType<Sdk[TOperation]>>["data"]>
-  ): response is GraphQLResponseWithExtensions<
-    Awaited<ReturnType<Sdk[TOperation]>>["data"]
-  > {
+    response: GraphQLResponse<Awaited<ReturnType<Sdk[TOperation]>>['data']>,
+  ): response is GraphQLResponseWithExtensions<Awaited<ReturnType<Sdk[TOperation]>>['data']> {
     const { extensions } = response;
 
-    if (
-      !extensions ||
-      typeof extensions !== "object" ||
-      !("contentful" in extensions)
-    ) {
+    if (!extensions || typeof extensions !== 'object' || !('contentful' in extensions)) {
       return false;
     }
 
     const { contentful } = extensions;
 
-    if (
-      !contentful ||
-      typeof contentful !== "object" ||
-      !("code" in contentful)
-    ) {
+    if (!contentful || typeof contentful !== 'object' || !('code' in contentful)) {
       return false;
     }
 
     const { code } = contentful;
 
     const isContentfulCodeValid =
-      typeof code === "string" &&
+      typeof code === 'string' &&
       Object.values(ContentfulGraphQLExtensionCode).includes(
-        code as ContentfulGraphQLExtensionCodeType
+        code as ContentfulGraphQLExtensionCodeType,
       );
 
     /** NB! I only check if the code is valid.
@@ -147,9 +131,7 @@ export class ContentfulGraphQLClientImpl extends GraphQLClient {
     return isContentfulCodeValid;
   }
 
-  private shouldReturnPartialSuccess(
-    extension: ContentfulGraphQLExtension
-  ): boolean {
+  private shouldReturnPartialSuccess(extension: ContentfulGraphQLExtension): boolean {
     const partialSuccessErrorCodes: ContentfulGraphQLExtensionCodeType[] = [
       ContentfulGraphQLExtensionCode.UNKNOWN_LOCALE,
       ContentfulGraphQLExtensionCode.UNRESOLVABLE_LINK,
@@ -162,13 +144,12 @@ export class ContentfulGraphQLClientImpl extends GraphQLClient {
   }
 }
 
-type GraphQLResponseWithExtensions<
-  TData extends Awaited<ReturnType<Sdk[keyof Sdk]>>["data"]
-> = GraphQLResponse<TData> & {
-  extensions: {
-    contentful: ContentfulGraphQLExtension;
-  } & { [key: string]: unknown };
-};
+type GraphQLResponseWithExtensions<TData extends Awaited<ReturnType<Sdk[keyof Sdk]>>['data']> =
+  GraphQLResponse<TData> & {
+    extensions: {
+      contentful: ContentfulGraphQLExtension;
+    } & { [key: string]: unknown };
+  };
 
 // Authentication	401	ACCESS_TOKEN_MISSING	no
 // Authentication	401	ACCESS_TOKEN_INVALID	no

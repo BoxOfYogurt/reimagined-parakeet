@@ -1,1 +1,1 @@
-export { BottomDecoration } from "./BottomDecoration";
+export { BottomDecoration } from './BottomDecoration';
