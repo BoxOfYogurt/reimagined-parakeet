@@ -1,4 +1,10 @@
+import { Suspense } from "react";
 import { ApplicationLayout } from "@/library";
+import { ContentfulGraphQLClientImpl } from "@/clients/contentfulGraphqlClient";
+import {
+  AccordionTeaserBlock,
+  AccordionTeaserBlockSkeleton,
+} from "@/cms/blocks/AccordionTeaserBlock";
 
 export default function Home() {
   return (
@@ -44,13 +50,73 @@ export default function Home() {
       </section>
 
       <section aria-labelledby="faq" className="mt-10">
-        <ApplicationLayout width="regular">
-          <h2 id="faq" className="typography-heading-sm-bold my-5 scroll-mt-2">
-            FAQ
+        <ApplicationLayout width="small">
+          <h2
+            id="faq"
+            className="typography-heading-sm-bold text-heading my-5 scroll-mt-2"
+          >
+            Need answers?
           </h2>
-          <p>A link to the page that renders the FAQ should be here...</p>
+          <Suspense
+            fallback={<AccordionTeaserListSkeleton numberOfSkeletons={1} />}
+          >
+            <AccordionTeaserList />
+          </Suspense>
         </ApplicationLayout>
       </section>
     </>
   );
 }
+
+export const AccordionTeaserList = async () => {
+  const client = new ContentfulGraphQLClientImpl();
+  const safeResponse = await client.getAccordionTeaserCollection();
+
+  return (
+    <>
+      {safeResponse.success ? (
+        <ul>
+          {safeResponse.data.accordionCollection?.items.map(
+            (item) =>
+              item && (
+                <li key={item.sys.id}>
+                  <AccordionTeaserBlock
+                    key={item.sys.id}
+                    sys={{ id: item.sys.id }}
+                    title={item.title}
+                    url={`faq/${item.sys.id}`}
+                  />
+                </li>
+              )
+          )}
+        </ul>
+      ) : (
+        <div>
+          <p className="typography-short-base-regular">
+            Seems we encountered an error getting the answers...
+          </p>
+        </div>
+      )}
+    </>
+  );
+};
+
+type AccordionTeaserBlockSkeletonProps = {
+  numberOfSkeletons: number;
+};
+
+const AccordionTeaserListSkeleton = ({
+  numberOfSkeletons = 1,
+}: AccordionTeaserBlockSkeletonProps) => {
+  const skeletons = new Array(numberOfSkeletons).fill(null);
+
+  return (
+    <ul className="space-y-2">
+      {skeletons.map((_, index) => (
+        <li key={index}>
+          <AccordionTeaserBlockSkeleton />
+        </li>
+      ))}
+    </ul>
+  );
+};

@@ -39,7 +39,7 @@ export default function RootLayout({
             <p className="typography-sm-regular text-subtle">Task Assignment</p>
           </ApplicationLayout>
         </header>
-        <main className="relative min-h-content-height pb-10">
+        <main className="relative min-h-content-height pb-20 sm:pb-24">
           {children}
           <div className="absolute inset-x-0 bottom-0">
             <BottomDecoration />

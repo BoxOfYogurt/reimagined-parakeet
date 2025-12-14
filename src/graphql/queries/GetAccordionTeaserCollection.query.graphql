@@ -3,10 +3,10 @@
 # In this application we use this query to fetch the one accordion collection.
 # If there were multiple collections, we would likely add parameters to this query.
 
-query GetAccordionCollectionTeaser {
+query GetAccordionTeaserCollection {
   accordionCollection {
     items {
-      ...AccordionTeaser
+      ...AccordionTeaserBlock
     }
   }
 }

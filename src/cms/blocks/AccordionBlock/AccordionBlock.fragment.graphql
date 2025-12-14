@@ -1,4 +1,4 @@
-fragment Accordion on Accordion {
+fragment AccordionBlock on Accordion {
   sys {
     id
   }
