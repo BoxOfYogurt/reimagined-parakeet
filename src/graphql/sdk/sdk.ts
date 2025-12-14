@@ -2116,8 +2116,8 @@ export const AccordionItemsCollectionFragmentDoc = gql`
   }
 }
     `;
-export const AccordionFragmentDoc = gql`
-    fragment Accordion on Accordion {
+export const AccordionBlockFragmentDoc = gql`
+    fragment AccordionBlock on Accordion {
   sys {
     id
   }
@@ -2128,8 +2128,8 @@ export const AccordionFragmentDoc = gql`
   }
 }
     `;
-export const AccordionTeaserFragmentDoc = gql`
-    fragment AccordionTeaser on Accordion {
+export const AccordionTeaserBlockFragmentDoc = gql`
+    fragment AccordionTeaserBlock on Accordion {
   sys {
     id
   }
@@ -2140,29 +2140,29 @@ export const GetAccordionCollectionDocument = gql`
     query GetAccordionCollection {
   accordionCollection {
     items {
-      ...Accordion
+      ...AccordionBlock
     }
   }
 }
-    ${AccordionFragmentDoc}
+    ${AccordionBlockFragmentDoc}
 ${AccordionItemsCollectionFragmentDoc}
 ${AccordionItemFragmentDoc}`;
 export const GetAccordionTeaserCollectionDocument = gql`
     query GetAccordionTeaserCollection {
   accordionCollection {
     items {
-      ...AccordionTeaser
+      ...AccordionTeaserBlock
     }
   }
 }
-    ${AccordionTeaserFragmentDoc}`;
+    ${AccordionTeaserBlockFragmentDoc}`;
 export const GetSingleAccordionDocument = gql`
     query GetSingleAccordion($id: String!) {
   accordion(id: $id) {
-    ...Accordion
+    ...AccordionBlock
   }
 }
-    ${AccordionFragmentDoc}
+    ${AccordionBlockFragmentDoc}
 ${AccordionItemsCollectionFragmentDoc}
 ${AccordionItemFragmentDoc}`;
 
@@ -2187,13 +2187,13 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   };
 }
 export type Sdk = ReturnType<typeof getSdk>;
-export type AccordionFragment = { __typename?: 'Accordion', internalName?: string | null, title?: string | null, sys: { __typename?: 'Sys', id: string }, accordionItemsCollection?: { __typename?: 'AccordionAccordionItemsCollection', total: number, items: Array<{ __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null };
+export type AccordionBlockFragment = { __typename?: 'Accordion', internalName?: string | null, title?: string | null, sys: { __typename?: 'Sys', id: string }, accordionItemsCollection?: { __typename?: 'AccordionAccordionItemsCollection', total: number, items: Array<{ __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null };
+
+export type AccordionTeaserBlockFragment = { __typename?: 'Accordion', title?: string | null, sys: { __typename?: 'Sys', id: string } };
 
 export type AccordionItemFragment = { __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } };
 
 export type AccordionItemsCollectionFragment = { __typename?: 'AccordionAccordionItemsCollection', total: number, items: Array<{ __typename?: 'AccordionItem', internalName?: string | null, name?: string | null, text?: string | null, sys: { __typename?: 'Sys', id: string } } | null> };
-
-export type AccordionTeaserFragment = { __typename?: 'Accordion', title?: string | null, sys: { __typename?: 'Sys', id: string } };
 
 export type GetAccordionCollectionQueryVariables = Exact<{ [key: string]: never; }>;
 

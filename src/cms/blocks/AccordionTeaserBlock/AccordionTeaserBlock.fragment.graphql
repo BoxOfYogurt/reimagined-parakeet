@@ -1,0 +1,6 @@
+fragment AccordionTeaserBlock on Accordion {
+  sys {
+    id
+  }
+  title
+}

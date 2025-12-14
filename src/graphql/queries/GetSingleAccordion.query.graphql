@@ -1,5 +1,5 @@
 query GetSingleAccordion($id: String!) {
   accordion(id: $id) {
-    ...Accordion
+    ...AccordionBlock
   }
 }

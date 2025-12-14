@@ -1,5 +1,5 @@
 import { toSafeHtmlId } from "@/cms/helpers/toSafeHtmlId";
-import { AccordionFragment } from "@/graphql/sdk/sdk";
+import { AccordionBlockFragment } from "@/graphql/sdk/sdk";
 import {
   DisclosureGroup,
   Disclosure,
@@ -8,7 +8,7 @@ import {
 } from "@/library";
 import cx from "classix";
 
-type AccordionBlock = AccordionFragment & {
+type AccordionBlock = AccordionBlockFragment & {
   className?: string;
 };
 
