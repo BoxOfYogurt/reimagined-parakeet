@@ -43,7 +43,7 @@ export const AccordionBlock = ({
                       <CaretDownIcon />
                     </span>
                   </DisclosureTrigger>
-                  <DisclosurePanel className="typography-long-lg-regular bg-bg-sunken border-transparent group-rac-expanded/disclosure-root:border-border-neutral border-2 border-t-0 rounded-b-lg">
+                  <DisclosurePanel className="typography-long-lg-regular bg-bg-sunken border-transparent group-rac-expanded/disclosure-root:border-border-neutral border-2 border-t-0 rounded-b-lg bg-clip-padding">
                     <div className="p-5">{item.text}</div>
                   </DisclosurePanel>
                 </Disclosure>
