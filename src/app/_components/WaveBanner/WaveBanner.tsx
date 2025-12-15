@@ -10,16 +10,9 @@ export const WaveBanner = () => {
     >
       <defs>
         <linearGradient id="brandGradient" x1="0" x2="1" y1="0" y2="0">
-          <stop offset="0%" stopColor="#7C3AED" />
-          <stop offset="50%" stopColor="#22D3EE">
-            <animate
-              attributeName="offset"
-              values="50%;80%;50%"
-              dur="8s"
-              repeatCount="indefinite"
-            />
-          </stop>
-          <stop offset="100%" stopColor="#10B981" />
+          <stop offset="0%" stopColor="var(--brand-primary)" />
+          <stop offset="50%" stopColor="var(--brand-secondary)" />
+          <stop offset="100%" stopColor="var(--brand-tertiary)" />
         </linearGradient>
       </defs>
       <path

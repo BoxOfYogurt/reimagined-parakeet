@@ -1,4 +1,6 @@
 @theme {
+  --font-sans: var(--font-dm-sans);
+
   /** TYPOGRAPHY - HEADING - LG - 80px */
   --text-heading-lg: 5rem;
   --text-heading-lg--line-height: 5rem;

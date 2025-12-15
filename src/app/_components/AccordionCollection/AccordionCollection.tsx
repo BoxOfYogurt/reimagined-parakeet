@@ -1,7 +1,7 @@
+import { notFound } from 'next/navigation';
 import { ContentfulGraphQLClientImpl } from '@/clients';
 import { AccordionBlock } from '@/cms/blocks';
 import { ApplicationLayout } from '@/library';
-import { notFound } from 'next/navigation';
 
 export const AccordionCollection = async () => {
   const client = new ContentfulGraphQLClientImpl();
