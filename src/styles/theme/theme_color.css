@@ -1,3 +1,11 @@
+/**
+ Disclaimer: The color palette used in this file contains tokens and values that are not used.
+ This is intentional to illustrate how i would create a more complete design system structure.
+
+ - Should not be a problem due to tailwindcss tree-shaking unused css.
+ - In a real-world project, I would collaborate with designers to refine and optimize the palette.
+*/
+
 :root {
   /** neutral gradient */
   --neutral-000: rgb(0, 0, 0);
@@ -23,28 +31,60 @@
   --blue-800: rgb(109, 157, 221);
   --blue-900: rgb(132, 174, 230);
   --blue-1000: rgb(169, 203, 250);
+
+  /** red gradient */
+  --red-100: rgb(65, 4, 9);
+  --red-200: rgb(73, 11, 16);
+  --red-300: rgb(82, 21, 23);
+  --red-400: rgb(95, 32, 33);
+  --red-500: rgb(200, 52, 63);
+  --red-600: rgb(222, 74, 80);
+  --red-700: rgb(235, 103, 114);
+  --red-800: rgb(238, 118, 133);
+  --red-900: rgb(242, 142, 162);
+  --red-1000: rgb(255, 179, 205);
+
+  /** brand colors */
+  --brand-primary: rgb(124, 58, 237);
+  --brand-secondary: rgb(34, 211, 238);
+  --brand-tertiary: rgb(16, 185, 129);
 }
 
 @theme inline {
   --color-*: initial;
 
-  --color-bg: var(--neutral-200);
+  /* ROOT COLORS */
   --color-fg: var(--neutral-1000);
+  --color-bg: var(--neutral-200);
+  --color-bg-raised: var(--neutral-300);
+  --color-bg-sunken: var(--neutral-100);
 
-  /* surface */
-  --color-surface: var(--neutral-200);
-  --color-surface-raised: var(--neutral-300);
-  --color-surface-sunken: var(--neutral-100);
+  /* STATE COLORS */
 
-  --color-surface-brand: var(--blue-200);
-  --color-surface-brand-raised: var(--blue-300);
-  --color-surface-brand-sunken: var(--blue-100);
+  /* background danger */
+  --color-bg-danger-soft: var(--red-100);
+  --color-bg-danger-moderate: var(--red-500);
+  --color-bg-danger-strong: var(--red-700);
 
-  /* border */
-  --color-border-neutral: var(--neutral-300);
+  /* border  */
+  --color-border-neutral: var(--neutral-400);
+  --color-border-outline: var(--blue-500);
+
+  --color-border-danger-soft: var(--red-300);
+  --color-border-danger-moderate: var(--red-600);
+  --color-border-danger-strong: var(--red-800);
 
   /* text */
+  /* Typically, text color tokens include "-soft/-moderate/-strong" and "text-on-surface" variants to ensure WCAG AA/AAA contrast compliance.*/
+  /* With this project's small palette, the text-tokens is intentionally simplified. */
+  --color-text-on-danger: var(--neutral-1000);
+
   --color-text: var(--neutral-1000);
   --color-heading: var(--blue-1000);
   --color-subtle: var(--neutral-700);
+
+  /* BRAND */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-tertiary: var(--brand-tertiary);
 }

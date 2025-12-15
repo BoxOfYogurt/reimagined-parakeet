@@ -1,9 +1,9 @@
-import { WaveBanner } from '@/app/_components';
-import { ApplicationLayout } from '@/library';
-import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Link from 'next/link';
+import { WaveBanner } from '@/app/_components';
+import { ApplicationLayout } from '@/library';
+import '@/styles/globals.css';
 
 const DMSans = localFont({
   src: './_font/dm-sans-normal.woff2',
@@ -40,11 +40,11 @@ export default function RootLayout({
         </header>
         <main className="min-h-content-height relative pb-20 sm:pb-24">
           {children}
-          <div className="absolute inset-x-0 bottom-0">
+          <div className="absolute inset-x-0 bottom-0 h-24">
             <WaveBanner />
           </div>
         </main>
-        <footer className="bg-surface-brand-sunken py-5">
+        <footer className="bg-bg-sunken py-5">
           <ApplicationLayout width="small">
             <p className="typography-sm-regular text-subtle text-center">
               Created by Mads Østrem - 2025

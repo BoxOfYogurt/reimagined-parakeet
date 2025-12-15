@@ -60,6 +60,7 @@ export const Disclosure = ({
       return;
     }
 
+    /** Only call onExpandedChange if not controlled by group */
     onExpandedChange?.(isExpanded);
   };
 
@@ -88,6 +89,7 @@ export const DisclosureTrigger = ({ children, className, level = 3 }: Disclosure
       <RacButton
         slot="trigger"
         className={cx(
+          'group/disclosure-trigger',
           'cursor-pointer group-data-[disabled=true]/disclosure-root:cursor-default',
           className,
         )}

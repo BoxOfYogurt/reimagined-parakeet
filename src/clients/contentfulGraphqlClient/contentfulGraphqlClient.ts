@@ -1,3 +1,4 @@
+import { GraphQLClient, GraphQLResponse } from 'graphql-request';
 import {
   ContentfulGraphQLExtensionCode,
   ContentfulGraphQLExtensionCodeType,
@@ -10,7 +11,6 @@ import {
   Sdk,
 } from '@/graphql/sdk/sdk';
 import { SafeGraphResponse, ContentfulGraphQLExtension } from '@/types';
-import { GraphQLClient, GraphQLResponse } from 'graphql-request';
 
 export class ContentfulGraphQLClientImpl extends GraphQLClient {
   private sdk: ReturnType<typeof getSdk>;
