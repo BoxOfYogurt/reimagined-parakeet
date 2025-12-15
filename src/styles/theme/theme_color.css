@@ -23,28 +23,34 @@
   --blue-800: rgb(109, 157, 221);
   --blue-900: rgb(132, 174, 230);
   --blue-1000: rgb(169, 203, 250);
+
+  /** brand colors */
+  --brand-primary: rgb(124, 58, 237);
+  --brand-secondary: rgb(34, 211, 238);
+  --brand-tertiary: rgb(16, 185, 129);
 }
 
 @theme inline {
   --color-*: initial;
 
-  --color-bg: var(--neutral-200);
+  /* background */
   --color-fg: var(--neutral-1000);
 
-  /* surface */
-  --color-surface: var(--neutral-200);
-  --color-surface-raised: var(--neutral-300);
-  --color-surface-sunken: var(--neutral-100);
-
-  --color-surface-brand: var(--blue-200);
-  --color-surface-brand-raised: var(--blue-300);
-  --color-surface-brand-sunken: var(--blue-100);
+  --color-bg: var(--neutral-200);
+  --color-bg-raised: var(--neutral-300);
+  --color-bg-sunken: var(--neutral-100);
 
   /* border */
-  --color-border-neutral: var(--neutral-300);
+  --color-border-neutral: var(--neutral-400);
+  --color-border-outline: var(--blue-500);
 
   /* text */
   --color-text: var(--neutral-1000);
   --color-heading: var(--blue-1000);
   --color-subtle: var(--neutral-700);
+
+  /* brand */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-tertiary: var(--brand-tertiary);
 }

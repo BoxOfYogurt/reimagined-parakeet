@@ -16,7 +16,7 @@ export const TextSection = ({ id, title, text }: TextSectionProps) => (
       >
         {title}
       </h2>
-      <p className="typography-long-base-regular">{text}</p>
+      <p className="typography-long-lg-regular">{text}</p>
     </ApplicationLayout>
   </section>
 );
