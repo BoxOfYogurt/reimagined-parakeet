@@ -60,6 +60,7 @@ export const Disclosure = ({
       return;
     }
 
+    /** Only call onExpandedChange if not controlled by group */
     onExpandedChange?.(isExpanded);
   };
 
