@@ -46,16 +46,10 @@ Do not commit real secrets. `.env` is git-ignored.
 - CSS: Tailwind v4 utilities + custom tokens; theme files live in `src/styles/theme`.
 - Accessibility: Components leverage `react-aria-components` for semantics and keyboard support.
 
-## Data Fetching Pattern
-
-- Fetch in server components for security and performance.
-- Example: `AccordionTeaserList` (server component) calls the Contentful client and renders blocks.
-- For reuse across routes, colocate server components under `src/app/_components` or keep them near their route.
-- If you need a client boundary, expose a route handler under `src/app/api/...` and fetch from the client.
-
 ## Scripts
 
 - `npm run dev`: Start local development
 - `npm run build`: Production build
 - `npm start`: Run built app
 - `npm gen:graphql:sdk`: Generate the GraphQL SDK.
+- `npm format`: Formats files using prettier
