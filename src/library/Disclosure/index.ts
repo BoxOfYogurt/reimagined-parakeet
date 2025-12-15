@@ -1,1 +1,1 @@
-export { Disclosure, DisclosureTrigger, DisclosurePanel } from './Disclosure';
+export { Disclosure, DisclosureTrigger, DisclosurePanel, type DisclosureProps } from './Disclosure';
