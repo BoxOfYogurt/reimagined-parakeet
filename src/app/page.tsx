@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { AccordionCollection, AccordionCollectionSkeleton, TextSection } from '@/app/_components';
+import { ApplicationLayout } from '@/library';
 
 export default function Home() {
   return (
@@ -18,9 +19,11 @@ export default function Home() {
       />
 
       <section className="my-10">
-        <Suspense fallback={<AccordionCollectionSkeleton numberOfSkeletons={3} />}>
-          <AccordionCollection />
-        </Suspense>
+        <ApplicationLayout width="small">
+          <Suspense fallback={<AccordionCollectionSkeleton numberOfSkeletons={3} />}>
+            <AccordionCollection />
+          </Suspense>
+        </ApplicationLayout>
       </section>
     </>
   );

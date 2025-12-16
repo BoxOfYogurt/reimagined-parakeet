@@ -18,7 +18,7 @@ export const AccordionBlock = ({
   const htmlId = toSafeHtmlId(title || internalName || sys.id);
   return (
     <section aria-labelledby={htmlId} className={className}>
-      <h2 id={htmlId} className="typography-heading-sm-bold text-heading my-5 scroll-mt-2">
+      <h2 id={htmlId} className="typography-heading-sm-bold text-heading my-5 scroll-mt-2 ">
         {title || internalName}
       </h2>
 
@@ -31,7 +31,7 @@ export const AccordionBlock = ({
                   <DisclosureTrigger
                     className={cx(
                       '-outline-offset-2 outline-border-outline outline-2 rac-focus-visible:outline-solid outline-none',
-                      'border-border-neutral border-2 rac-hover:text-brand-secondary bg-bg-sunken flex items-center typography-short-lg-bold w-full rounded-lg h-14 pl-4 group-rac-expanded/disclosure-root:rounded-b-none group-rac-expanded/disclosure-root:border-b-2 group-rac-expanded/disclosure-root:border-border-neutral',
+                      'overflow-hidden text-left border-border-neutral border-2 rac-hover:text-brand-secondary bg-bg-sunken flex items-center typography-short-lg-bold w-full rounded-lg min-h-14 pl-4 group-rac-expanded/disclosure-root:rounded-b-none group-rac-expanded/disclosure-root:border-b-2 group-rac-expanded/disclosure-root:border-border-neutral',
                     )}
                   >
                     <div>{item.name}</div>
